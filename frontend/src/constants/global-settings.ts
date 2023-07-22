@@ -24,16 +24,15 @@ export const muiTheme = createTheme({
     primary: {
       main: '#778899',
     },
-    secondary: {
-      // TODO: decide
-      main: '#000',
-    },
+    // secondary: {
+    //   main: '#',
+    // },
     text: {
       primary: '#000',
-      secondary: '#f0f0f0',
+      secondary: '#dcdcdc',
     },
     background: {
-      default: '#f0f0f0',
+      default: '#dcdcdc',
       paper: '#fff',
     },
     // error: {

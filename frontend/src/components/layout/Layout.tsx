@@ -36,7 +36,7 @@ const Layout: FC<Props> = ({ children }) => {
           <Sidebar />
         </Grid>
         <Grid item xs={8}>
-          <Box component='main' flexGrow={1}>
+          <Box component='main'>
             <ErrorBoundary fallback={<Error />}>
               <Suspense fallback={<Loading />}>{children}</Suspense>
             </ErrorBoundary>

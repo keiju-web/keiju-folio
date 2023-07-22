@@ -4,7 +4,9 @@ import { Grid } from '@mui/material'
 import Button from 'components/button/Button'
 import Loading from 'components/loading/Loading'
 
-/** For Confirmation */
+/**
+ * This is a page to confirm all components at the same time
+ */
 const Components: FC = () => {
   return (
     <Grid container spacing={4} py={4}>
