@@ -33,7 +33,7 @@ export const muiTheme = createTheme({
     },
     background: {
       default: '#dcdcdc',
-      paper: '#fff',
+      paper: '#dcdcdc',
     },
     // error: {
     //   main: '#',

@@ -1,10 +1,13 @@
 import { FC, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+import { PROFILE_PIC_SRC } from 'constants/env'
 import { ROUTES } from 'constants/route'
 
 import { Box, Hidden, List, ListItem, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/system'
+import Image from 'components/image/Image'
+import { slideInFromLeft, slideInFromRight } from 'styles/keyframes'
 
 const Sidebar: FC = () => {
   const location = useLocation()
@@ -20,6 +23,13 @@ const Sidebar: FC = () => {
       {/* <Drawer variant='temporary' open={isOpen} onClose={onDrawerToggle}> */}
       <Hidden smDown>
         <Paper elevation={12} sx={{ backgroundColor: 'primary.main', height: '100vh' }}>
+          <Box pt={8} pb={2}>
+            <Image image={PROFILE_PIC_SRC} height={150} alt='profile-pic' isRadious />
+            <Typography mt={2} variant='h4' component='h1' color='textSecondary' textAlign='center'>
+              Keiju Hikichi
+            </Typography>
+          </Box>
+
           <List>
             {ROUTES.filter((route) => route.name).map((route, key) => (
               <ListItem
@@ -27,6 +37,7 @@ const Sidebar: FC = () => {
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
+                  animation: `${key % 2 === 0 ? slideInFromLeft : slideInFromRight} 1s ease-out`,
                 }}
               >
                 <Link to={route.path}>

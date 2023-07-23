@@ -6,6 +6,7 @@ import { muiTheme, queryClient } from 'constants/global-settings'
 
 import { ThemeProvider } from '@mui/material/styles'
 import { AuthProvider } from 'hooks/use-auth'
+import { ModalProvider } from 'hooks/use-modal'
 import { QueryClientProvider } from 'react-query'
 
 import App from './App'
@@ -17,9 +18,11 @@ root.render(
   <React.StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={muiTheme}>
-          <App />
-        </ThemeProvider>
+        <ModalProvider>
+          <ThemeProvider theme={muiTheme}>
+            <App />
+          </ThemeProvider>
+        </ModalProvider>
       </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,

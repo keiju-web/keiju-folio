@@ -11,8 +11,16 @@ type Props = {
 
 const Loading: FC<Props> = ({ height = '100vh', width = '250px' }) => {
   return (
-    <Box display='flex' justifyContent='center' alignItems='center' height={height}>
-      <img src={LOADING_IMG_SRC} alt='Loading...' style={{ width, marginBottom: '150px' }} />
+    <Box
+      display='flex'
+      justifyContent='center'
+      alignItems='center'
+      height={height}
+      sx={{
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+      }}
+    >
+      <img src={LOADING_IMG_SRC} alt='Loading...' style={{ width }} />
     </Box>
   )
 }

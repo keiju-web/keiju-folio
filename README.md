@@ -8,9 +8,10 @@
 - router settings
 - Layout Title
 - react-query
-
 - common Loading Suspense
 - useContext modal
+
+- useContext toast
 - mock
 
 ## Set up supabase
@@ -30,5 +31,14 @@ npx supabase gen types typescript --linked > src/lib/schema.ts
 const UPPER_CASE: Type = {
   camelCase: 'aaa',
   bbb: 'bbb"
+}
+```
+
+- Type
+
+```
+type TypeType = {
+  aaa: 'string',
+  bbb: 123
 }
 ```

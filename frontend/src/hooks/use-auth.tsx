@@ -5,6 +5,10 @@ import { supabase } from 'constants/global-settings'
 
 import { Session } from '@supabase/supabase-js'
 
+/**
+ * Auth Context
+ */
+
 export type User = {
   id: string
   email: string
