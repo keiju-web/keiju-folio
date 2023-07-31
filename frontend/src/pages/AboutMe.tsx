@@ -1,7 +1,9 @@
 import { FC } from 'react'
 
+import { Container } from '@mui/material'
+
 const AboutMe: FC = () => {
-  return <div>AboutMe</div>
+  return <Container>AboutMe</Container>
 }
 
 export default AboutMe

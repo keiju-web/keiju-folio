@@ -1,7 +1,9 @@
 import { FC } from 'react'
 
+import { Container } from '@mui/material'
+
 const Resume: FC = () => {
-  return <div>Resume</div>
+  return <Container>Resume</Container>
 }
 
 export default Resume

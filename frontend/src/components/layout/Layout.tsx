@@ -46,7 +46,7 @@ const Layout: FC<Props> = ({ children }) => {
           <Box component='main'>
             <ErrorBoundary fallback={<Error />}>
               <Suspense fallback={<Loading />}>
-                <Box m={4}>{children}</Box>
+                <Box my={4}>{children}</Box>
               </Suspense>
             </ErrorBoundary>
             {/* Context Components */}

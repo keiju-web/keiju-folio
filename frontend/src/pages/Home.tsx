@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { ROUTE_PATH } from 'constants/route'
 
-import { Box, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import Button from 'components/button/Button'
 import PulseStar from 'components/icon/PulseStar'
 import { fadeInWithTranslate } from 'styles/keyframes'
@@ -16,7 +16,7 @@ const Home: FC = () => {
   }, [])
 
   return (
-    <Box
+    <Container
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -46,7 +46,7 @@ const Home: FC = () => {
       <Box mt={4}>
         <Button onClick={onClickContactMe}>Contact Me</Button>
       </Box>
-    </Box>
+    </Container>
   )
 }
 
