@@ -24,9 +24,9 @@ export const muiTheme = createTheme({
     primary: {
       main: '#778899',
     },
-    // secondary: {
-    //   main: '#',
-    // },
+    secondary: {
+      main: '#ff8c00',
+    },
     text: {
       primary: '#000',
       secondary: '#dcdcdc',

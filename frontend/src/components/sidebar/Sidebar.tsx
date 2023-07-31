@@ -43,7 +43,7 @@ const Sidebar: FC = () => {
                 <Link to={route.path}>
                   <BottomedTypography
                     className={location.pathname === route.path ? 'active' : ''}
-                    sx={{ fontSize: '24px', color: 'text.secondary' }}
+                    sx={{ fontSize: '26px', color: 'text.secondary' }}
                   >
                     {route.name}
                   </BottomedTypography>

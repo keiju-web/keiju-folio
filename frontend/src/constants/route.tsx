@@ -8,13 +8,17 @@ import Home from 'pages/Home'
 import Projects from 'pages/Projects'
 import Resume from 'pages/Resume'
 
-export type Route = Required<Pick<PathRouteProps, 'path' | 'element'>> & { name?: string }
+type RouteName = 'Home' | 'About Me' | 'Resume' | 'Projects' | 'Contact'
+
+export type Route = Readonly<
+  Required<Pick<PathRouteProps, 'path' | 'element'>> & { name?: RouteName }
+>
 
 /**
  * Page settings
  * If not having name, not be shown on Sidebar.
  **/
-export const ROUTES: Route[] = [
+export const ROUTES: readonly Route[] = [
   {
     path: '/*',
     element: <Error />,
@@ -48,4 +52,15 @@ export const ROUTES: Route[] = [
     name: 'Contact',
     element: <Contact />,
   },
-]
+] as const
+
+/**
+ * Generated paths
+ * ex. {Contact: '/contact'}
+ */
+export const ROUTE_PATH: Record<RouteName, string> = ROUTES.reduce((acc, route) => {
+  if (route.name) {
+    return { ...acc, [route.name]: route.path }
+  }
+  return acc
+}, {} as Record<RouteName, string>)

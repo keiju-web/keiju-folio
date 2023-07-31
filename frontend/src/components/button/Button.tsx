@@ -14,6 +14,10 @@ const Button: FC<Props> = ({ children, mode = 'primary', size = 'medium', ...oth
       color='primary'
       size={size}
       variant={mode === 'primary' ? 'contained' : 'outlined'}
+      sx={{
+        textTransform: 'none',
+        fontSize: '1.2rem',
+      }}
     >
       {children}
     </MuiButton>

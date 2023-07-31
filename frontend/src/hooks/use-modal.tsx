@@ -1,41 +1,39 @@
 import { FC, ReactNode, createContext, useCallback, useContext, useState } from 'react'
 
+import { ModalProps } from 'components/modal/Modal'
+
 /**
  * Modal Context
  */
 
-export type ModalProps = {
-  isOpen: boolean
-  title: string
-  contents: ReactNode
-  openModal: (title: string, content: ReactNode) => void
-  closeModal: () => void
+export type OpenModal = Pick<ModalProps, 'title' | 'contents'>
+
+export type UseModal = ModalProps & {
+  openModal: (data: OpenModal) => void
 }
 
-export const modalContext = createContext<ModalProps>({} as ModalProps)
+export const modalContext = createContext<UseModal>({} as UseModal)
 
 export const ModalProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const value = useModalProvider()
   return <modalContext.Provider value={value}>{children}</modalContext.Provider>
 }
 
-export const useModal = (): ModalProps => useContext(modalContext)
+export const useModal = (): UseModal => useContext(modalContext)
 
-const useModalProvider = (): ModalProps => {
-  const [isOpen, setisOpen] = useState<boolean>(false)
+const useModalProvider = (): UseModal => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const [title, setTitle] = useState<string>('')
-  const [contents, setContents] = useState<ReactNode>(<></>)
-
-  const openModal = useCallback((title: string, contents: ReactNode) => {
-    setTitle(title)
-    setContents(contents)
-    setisOpen(true)
-  }, [])
+  const [contents, setContents] = useState<ReactNode>()
 
   const closeModal = useCallback(() => {
-    setTitle('')
-    setContents(<></>)
-    setisOpen(false)
+    setIsOpen(false)
+  }, [])
+
+  const openModal = useCallback((data: OpenModal) => {
+    setIsOpen(true)
+    setTitle(data.title)
+    setContents(data.contents)
   }, [])
 
   return {

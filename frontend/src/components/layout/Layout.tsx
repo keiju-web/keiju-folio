@@ -8,7 +8,9 @@ import Error from 'components/error/Error'
 import Loading from 'components/loading/Loading'
 import Modal from 'components/modal/Modal'
 import Sidebar from 'components/sidebar/Sidebar'
+import Toast from 'components/toast/Toast'
 import { useModal } from 'hooks/use-modal'
+import { useToast } from 'hooks/use-toast'
 import { ErrorBoundary } from 'react-error-boundary'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
 
@@ -22,6 +24,7 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   const location = useLocation()
   const modalProps = useModal()
+  const toastProps = useToast()
 
   const title = useMemo(() => {
     const route = ROUTES.find((route) => route.path === location.pathname)
@@ -46,7 +49,9 @@ const Layout: FC<Props> = ({ children }) => {
                 <Box m={4}>{children}</Box>
               </Suspense>
             </ErrorBoundary>
+            {/* Context Components */}
             <Modal {...modalProps} />
+            <Toast {...toastProps} />
           </Box>
         </Grid>
       </Grid>

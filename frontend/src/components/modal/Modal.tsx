@@ -1,7 +1,13 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { Modal as MuiModal, Box, Typography, Divider } from '@mui/material'
-import { ModalProps } from 'hooks/use-modal'
+
+export type ModalProps = {
+  isOpen: boolean
+  title: string
+  contents: ReactNode
+  closeModal: () => void
+}
 
 const Modal: FC<ModalProps> = (props) => {
   const { isOpen, title, contents, closeModal } = props
