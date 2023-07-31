@@ -2,11 +2,11 @@ import { PathRouteProps } from 'react-router-dom'
 
 import Components from 'components/Components'
 import Error from 'components/error/Error'
-import AboutMe from 'pages/AboutMe'
-import Contact from 'pages/Contact'
-import Home from 'pages/Home'
-import Projects from 'pages/Projects'
-import Resume from 'pages/Resume'
+import AboutMe from 'pages/about-me/AboutMe'
+import Contact from 'pages/contact/Contact'
+import Home from 'pages/home/Home'
+import Projects from 'pages/projects/Projects'
+import Resume from 'pages/resume/Resume'
 
 type RouteName = 'Home' | 'About Me' | 'Resume' | 'Projects' | 'Contact'
 

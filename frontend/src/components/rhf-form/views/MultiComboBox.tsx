@@ -37,6 +37,7 @@ export const MultiComboBox = <T extends number | string = number>({
               '& label': {
                 color: 'primary.main',
               },
+              backgroundColor: '#f0f0f0',
               ...muiTextField?.sx,
             }}
             error={!!fieldWrapper.errorMessage}

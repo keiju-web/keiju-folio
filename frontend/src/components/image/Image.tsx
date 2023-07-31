@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react'
+import { FC, memo, useMemo } from 'react'
 
 import { Box, Card, CardMedia, CardMediaProps } from '@mui/material'
 import { fadeIn } from 'styles/keyframes'
@@ -42,4 +42,4 @@ const Image: FC<Props> = ({ isRadious = false, ...props }) => {
   )
 }
 
-export default Image
+export default memo(Image)

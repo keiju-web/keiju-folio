@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, memo } from 'react'
 
 import { Modal as MuiModal, Box, Typography, Divider } from '@mui/material'
 
@@ -45,4 +45,4 @@ const boxSxProps = {
   borderRadius: '20px',
 }
 
-export default Modal
+export default memo(Modal)

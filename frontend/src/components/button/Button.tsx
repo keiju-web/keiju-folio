@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes, FC, memo } from 'react'
+import { FC, memo } from 'react'
 
-import { Button as MuiButton } from '@mui/material'
+import { ButtonProps, Button as MuiButton } from '@mui/material'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props = ButtonProps & {
   mode?: 'primary' | 'secondary'
   size?: 'small' | 'medium' | 'large'
 }
@@ -17,6 +17,7 @@ const Button: FC<Props> = ({ children, mode = 'primary', size = 'medium', ...oth
       sx={{
         textTransform: 'none',
         fontSize: '1.2rem',
+        ...otherProps.sx,
       }}
     >
       {children}

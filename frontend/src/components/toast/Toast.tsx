@@ -1,4 +1,4 @@
-import { FC, forwardRef } from 'react'
+import { FC, forwardRef, memo } from 'react'
 
 import { Alert, AlertColor } from '@mui/material'
 import Slide, { SlideProps } from '@mui/material/Slide'
@@ -33,4 +33,4 @@ const Toast: FC<ToastProps> = (props) => {
   )
 }
 
-export default Toast
+export default memo(Toast)

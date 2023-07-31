@@ -10,8 +10,10 @@
 - react-query
 - common Loading Suspense
 - useContext modal
-
 - useContext toast
+- RHF - MUI
+
+- Footer
 - mock
 
 ## Set up supabase

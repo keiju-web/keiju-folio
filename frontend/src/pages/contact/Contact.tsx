@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Container } from '@mui/material'
 import Button from 'components/button/Button'
-import { TextFieldController } from 'components/form/controllers/TextFieldController'
+import { TextFieldController } from 'components/rhf-form/controllers/TextFieldController'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 type Form = {

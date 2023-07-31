@@ -1,21 +1,21 @@
 import { FC, useCallback } from 'react'
 
-import { Box, Container, Grid } from '@mui/material'
+import { Box, Container, Grid, Paper } from '@mui/material'
 import Button from 'components/button/Button'
 import Loading from 'components/loading/Loading'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { CheckboxGroupController } from './form/controllers/CheckBoxGroupController'
-import { MultiComboBoxController } from './form/controllers/MultiComboBoxController'
-import { SelectController } from './form/controllers/SelectController'
-import { TextFieldController } from './form/controllers/TextFieldController'
-import { Options } from './form/types'
 import Pacman from './icon/Pacman'
+import { CheckboxGroupController } from './rhf-form/controllers/CheckBoxGroupController'
+import { MultiComboBoxController } from './rhf-form/controllers/MultiComboBoxController'
+import { SelectController } from './rhf-form/controllers/SelectController'
+import { TextFieldController } from './rhf-form/controllers/TextFieldController'
+import { Options } from './rhf-form/types'
 
 /**
- * This is a page to confirm all components at the same time
+ * This is a page for confirmation of all common components on this app
  */
 const Components: FC = () => {
   const { openModal } = useModal()
@@ -58,6 +58,12 @@ const Components: FC = () => {
                 severity: 'success',
               })
             }}
+            sx={{
+              backgroundColor: (theme) => theme.palette.success.main,
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.success.dark,
+              },
+            }}
           >
             Success
           </Button>
@@ -69,6 +75,12 @@ const Components: FC = () => {
                 message: 'Info!!',
                 severity: 'info',
               })
+            }}
+            sx={{
+              backgroundColor: (theme) => theme.palette.info.main,
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.info.dark,
+              },
             }}
           >
             Info
@@ -82,6 +94,12 @@ const Components: FC = () => {
                 severity: 'warning',
               })
             }}
+            sx={{
+              backgroundColor: (theme) => theme.palette.warning.main,
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.warning.dark,
+              },
+            }}
           >
             Warning
           </Button>
@@ -93,6 +111,12 @@ const Components: FC = () => {
                 message: 'Error!!',
                 severity: 'error',
               })
+            }}
+            sx={{
+              backgroundColor: (theme) => theme.palette.error.main,
+              '&:hover': {
+                backgroundColor: (theme) => theme.palette.error.dark,
+              },
             }}
           >
             Error
@@ -115,7 +139,10 @@ type Form = {
   checkboxGroup: number[]
   multiComboBox: Options<string>
 }
-/** RHF - MUI */
+/**
+ * RHF - MUI
+ * FYI. https://www.react-hook-form.com/get-started#IntegratingwithUIlibraries
+ **/
 const SampleForms = (): JSX.Element => {
   const {
     register,
@@ -136,69 +163,71 @@ const SampleForms = (): JSX.Element => {
   }, [])
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: 400 }}>
-      <TextFieldController<Form>
-        registration={register('textField')}
-        textField={{
-          muiTextField: {
-            label: 'Label',
-          },
-          fieldWrapper: {
-            label: 'TextField',
-            errorMessage: errors.textField?.message,
-          },
-        }}
-      />
-      <SelectController<Form>
-        controller={{
-          name: 'select',
-          control,
-        }}
-        select={{
-          muiTextField: {
-            label: 'Label',
-          },
-          fieldWrapper: { label: 'Select' },
-          options: [
-            { label: 'option1', value: 1 },
-            { label: 'option2', value: 2 },
-            { label: 'option3', value: 3 },
-          ],
-        }}
-      />
-      <CheckboxGroupController<Form>
-        controller={{
-          name: 'checkboxGroup',
-          control,
-        }}
-        checkboxGroup={{
-          fieldWrapper: { label: 'CheckboxGroup' },
-          options: [
-            { label: 'option1', value: 1 },
-            { label: 'option2', value: 2 },
-            { label: 'option3', value: 3 },
-          ],
-        }}
-      />
-      <MultiComboBoxController<Form, string>
-        controller={{
-          name: 'multiComboBox',
-          control,
-        }}
-        multiComboBox={{
-          muiTextField: {
-            label: 'Label',
-          },
-          fieldWrapper: { label: 'MultiComboBox' },
-          options: [
-            { label: 'option1', value: '1' },
-            { label: 'option2', value: '2' },
-            { label: 'option3', value: '3' },
-          ],
-        }}
-      />
-      <Button onClick={handleSubmit(onSubmit)}>{'Console.log'}</Button>
-    </Box>
+    <Paper>
+      <Box p={4} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <TextFieldController<Form>
+          registration={register('textField')}
+          textField={{
+            muiTextField: {
+              label: 'Label',
+            },
+            fieldWrapper: {
+              label: 'TextField',
+              errorMessage: errors.textField?.message,
+            },
+          }}
+        />
+        <SelectController<Form>
+          controller={{
+            name: 'select',
+            control,
+          }}
+          select={{
+            muiTextField: {
+              label: 'Label',
+            },
+            fieldWrapper: { label: 'Select' },
+            options: [
+              { label: 'option1', value: 1 },
+              { label: 'option2', value: 2 },
+              { label: 'option3', value: 3 },
+            ],
+          }}
+        />
+        <CheckboxGroupController<Form>
+          controller={{
+            name: 'checkboxGroup',
+            control,
+          }}
+          checkboxGroup={{
+            fieldWrapper: { label: 'CheckboxGroup' },
+            options: [
+              { label: 'option1', value: 1 },
+              { label: 'option2', value: 2 },
+              { label: 'option3', value: 3 },
+            ],
+          }}
+        />
+        <MultiComboBoxController<Form, string>
+          controller={{
+            name: 'multiComboBox',
+            control,
+          }}
+          multiComboBox={{
+            muiTextField: {
+              label: 'Label',
+            },
+            fieldWrapper: { label: 'MultiComboBox' },
+            options: [
+              { label: 'option1', value: '1' },
+              { label: 'option2', value: '2' },
+              { label: 'option3', value: '3' },
+            ],
+          }}
+        />
+        <Button onClick={handleSubmit(onSubmit)}>{'Console.log'}</Button>
+      </Box>
+    </Paper>
   )
 }
 

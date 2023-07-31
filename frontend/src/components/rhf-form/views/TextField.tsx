@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField'
-import { FieldWrapper, FieldWrapperPassThroughProps } from 'components/form/FieldWrapper'
+import { FieldWrapper, FieldWrapperPassThroughProps } from 'components/rhf-form/FieldWrapper'
 
 export type TextFieldProps = {
   fieldWrapper: FieldWrapperPassThroughProps
@@ -18,6 +18,7 @@ export const TextField: FC<TextFieldProps> = ({ fieldWrapper, muiTextField }) =>
           '& label': {
             color: 'primary.main',
           },
+          backgroundColor: '#f0f0f0',
           ...muiTextField?.sx,
         }}
         error={!!fieldWrapper.errorMessage}
