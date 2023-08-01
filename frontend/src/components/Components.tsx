@@ -8,11 +8,11 @@ import { useToast } from 'hooks/use-toast'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Pacman from './icon/Pacman'
-import { CheckboxGroupController } from './rhf-form/controllers/CheckBoxGroupController'
-import { MultiComboBoxController } from './rhf-form/controllers/MultiComboBoxController'
-import { SelectController } from './rhf-form/controllers/SelectController'
-import { TextFieldController } from './rhf-form/controllers/TextFieldController'
-import { Options } from './rhf-form/types'
+import { CheckboxGroupController } from './rhf/controllers/CheckBoxGroupController'
+import { MultiComboBoxController } from './rhf/controllers/MultiComboBoxController'
+import { SelectController } from './rhf/controllers/SelectController'
+import { TextFieldController } from './rhf/controllers/TextFieldController'
+import { Options } from './rhf/types'
 
 /**
  * This is a page for confirmation of all common components on this app
@@ -30,7 +30,6 @@ const Components: FC = () => {
       <Grid
         container
         spacing={4}
-        py={4}
         sx={{
           display: 'flex',
           justifyContent: 'center',

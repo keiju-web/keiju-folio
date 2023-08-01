@@ -1,13 +1,13 @@
 import { FC, memo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import { PROFILE_PIC_SRC } from 'constants/env'
+import { PROFILE_IMG_SRC } from 'constants/env'
 import { ROUTES } from 'constants/route'
 
 import { Box, Hidden, List, ListItem, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/system'
 import Image from 'components/image/Image'
-import { slideInFromLeft, slideInFromRight } from 'styles/keyframes'
+import { fadeIn, slideInFromLeft, slideInFromRight } from 'styles/keyframes'
 
 const Sidebar: FC = () => {
   const location = useLocation()
@@ -24,7 +24,16 @@ const Sidebar: FC = () => {
       <Hidden smDown>
         <Paper elevation={12} sx={{ backgroundColor: 'primary.main', height: '100vh' }}>
           <Box pt={8} pb={2}>
-            <Image image={PROFILE_PIC_SRC} height={150} alt='profile-pic' isRadious />
+            <Image
+              image={PROFILE_IMG_SRC}
+              alt='profile-pic'
+              sx={{
+                animation: `${fadeIn} 4s`,
+                // Fixed image size
+                width: '200px',
+                height: '200px',
+              }}
+            />
             <Typography mt={2} variant='h4' component='h1' color='textSecondary' textAlign='center'>
               Keiju Hikichi
             </Typography>

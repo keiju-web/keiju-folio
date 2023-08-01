@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField'
-import { FieldWrapper, FieldWrapperPassThroughProps } from 'components/rhf-form/FieldWrapper'
+import { FieldWrapper, FieldWrapperPassThroughProps } from 'components/rhf/FieldWrapper'
 
 export type TextFieldProps = {
   fieldWrapper: FieldWrapperPassThroughProps
