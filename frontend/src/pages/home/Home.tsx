@@ -8,6 +8,8 @@ import Button from 'components/button/Button'
 import PulseStar from 'components/icon/PulseStar'
 import { fadeInWithTranslate } from 'styles/keyframes'
 
+import Slides from './components/Slides'
+
 const Home: FC = () => {
   const navigate = useNavigate()
 
@@ -23,25 +25,20 @@ const Home: FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
         height: 'calc(100vh - 100px)',
+        padding: '0px !important',
       }}
     >
       <PulseStar />
       <Typography
         variant='h1'
         fontWeight='bold'
-        mb={4}
+        mb={2}
         sx={{ animation: `${fadeInWithTranslate} 2s ease-in-out` }}
       >
         {'Welcome'}
       </Typography>
 
-      <Typography
-        variant='h3'
-        color='secondary.main'
-        sx={{ animation: `${fadeInWithTranslate} 4s ease-in` }}
-      >
-        {"I'm a Full-Stack developer"}
-      </Typography>
+      <Slides />
 
       <Box mt={4}>
         <Button onClick={onClickContactMe}>Contact Me</Button>

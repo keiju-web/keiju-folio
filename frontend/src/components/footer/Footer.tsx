@@ -2,11 +2,12 @@ import { FC, memo, useMemo } from 'react'
 
 import { Box, Container, Typography } from '@mui/material'
 
+/** Sticky Footer */
 const Footer: FC = () => {
   const year = useMemo(() => new Date().getFullYear(), [])
 
   return (
-    <Box component='footer' sx={{ bgcolor: 'transparent', color: '#000' }}>
+    <Box component='footer' sx={{ bgcolor: 'transparent', mt: 'auto' }}>
       <Container maxWidth='lg'>
         <Typography variant='body1' align='center'>
           Copyright &copy; {year} Keiju Hikichi

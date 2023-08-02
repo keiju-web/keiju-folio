@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 import { ROUTES } from 'constants/route'
 
-import { Box, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import Error from 'components/error/Error'
 import Footer from 'components/footer/Footer'
 import Loading from 'components/loading/Loading'
@@ -40,34 +40,46 @@ const Layout: FC<Props> = ({ children }) => {
           <title>{title}</title>
         </Helmet>
       </HelmetProvider>
-      <Grid container>
-        <Grid item xs={4}>
+
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}
+      >
+        <Box
+          sx={{
+            width: { sm: '30%' },
+            position: 'fixed',
+            height: '100vh',
+            overflow: 'hidden',
+          }}
+        >
           <Sidebar />
-        </Grid>
-        <Grid item xs={8}>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '100vh',
-            }}
-          >
-            <Box
-              component='main'
-              sx={{
-                flex: '1',
-              }}
-            >
-              <ErrorBoundary fallback={<Error />}>
-                <Suspense fallback={<Loading />}>
-                  <Box my={4}>{children}</Box>
-                </Suspense>
-              </ErrorBoundary>
-            </Box>
-            <Footer />
-          </Box>
-        </Grid>
-      </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: { sm: '70%' },
+            ml: { sm: '30%' },
+            height: '100vh',
+            overflow: 'auto',
+          }}
+        >
+          <ErrorBoundary fallback={<Error />}>
+            <Suspense fallback={<Loading />}>
+              <Box component='main' my={4}>
+                {children}
+              </Box>
+            </Suspense>
+          </ErrorBoundary>
+
+          <Footer />
+        </Box>
+      </Box>
 
       {/* Context Components */}
       <Modal {...modalProps} />

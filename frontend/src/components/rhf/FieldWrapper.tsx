@@ -12,6 +12,10 @@ type FieldWrapperProps = PropsWithChildren<{
 
 export type FieldWrapperPassThroughProps = Omit<FieldWrapperProps, 'children'>
 
+/**
+ * RHF - MUI
+ * FYI. https://www.react-hook-form.com/get-started#IntegratingwithUIlibraries
+ **/
 export const FieldWrapper: FC<FieldWrapperProps> = ({
   label,
   required,

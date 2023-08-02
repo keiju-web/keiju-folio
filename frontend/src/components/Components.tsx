@@ -1,12 +1,13 @@
-import { FC, useCallback } from 'react'
+import { FC, ReactNode, useCallback } from 'react'
 
-import { Box, Container, Grid, Paper } from '@mui/material'
+import { Box, Container, Grid, Paper, Typography } from '@mui/material'
 import Button from 'components/button/Button'
 import Loading from 'components/loading/Loading'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import Carousel from './carousel/Carousel'
 import Pacman from './icon/Pacman'
 import { CheckboxGroupController } from './rhf/controllers/CheckBoxGroupController'
 import { MultiComboBoxController } from './rhf/controllers/MultiComboBoxController'
@@ -127,6 +128,9 @@ const Components: FC = () => {
         <Grid item xs={9}>
           <SampleForms />
         </Grid>
+        <Grid item xs={12}>
+          <SampleCarousel />
+        </Grid>
       </Grid>
     </Container>
   )
@@ -138,10 +142,7 @@ type Form = {
   checkboxGroup: number[]
   multiComboBox: Options<string>
 }
-/**
- * RHF - MUI
- * FYI. https://www.react-hook-form.com/get-started#IntegratingwithUIlibraries
- **/
+
 const SampleForms = (): JSX.Element => {
   const {
     register,
@@ -227,6 +228,30 @@ const SampleForms = (): JSX.Element => {
         <Button onClick={handleSubmit(onSubmit)}>{'Console.log'}</Button>
       </Box>
     </Paper>
+  )
+}
+
+const createSlide = (content: string, key: number): ReactNode => (
+  <Paper key={key}>
+    <Typography variant='h6'>{content}</Typography>
+  </Paper>
+)
+const slideContents = ['Slide 1', 'Slide 2', 'Slide 3']
+const slides: ReactNode[] = slideContents.map((content, index) => createSlide(content, index))
+
+const SampleCarousel = (): JSX.Element => {
+  return (
+    <Carousel
+      slides={slides}
+      autoPlay
+      infiniteLoop
+      transitionTime={3000}
+      interval={3000}
+      showArrows={false}
+      showStatus={false}
+      showIndicators={false}
+      showThumbs={false}
+    />
   )
 }
 

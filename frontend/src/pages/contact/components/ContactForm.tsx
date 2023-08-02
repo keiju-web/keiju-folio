@@ -31,8 +31,10 @@ const ContactForm: FC = () => {
 
   return (
     <Paper elevation={8} sx={{ p: 4 }}>
-      <Box>
-        <Typography>Get in Touch</Typography>
+      <Box display='flex' justifyContent='center' mb={4}>
+        <Typography variant='h4' borderBottom={6} borderColor='#6495ed'>
+          Get in Touch
+        </Typography>
       </Box>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>

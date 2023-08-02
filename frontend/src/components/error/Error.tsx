@@ -20,7 +20,7 @@ const Error: FC = () => {
         Not Found
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Button onClick={handleGoBack}>戻る</Button>
+        <Button onClick={handleGoBack}>Back</Button>
       </Box>
     </Container>
   )

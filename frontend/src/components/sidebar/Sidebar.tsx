@@ -18,7 +18,7 @@ const Sidebar: FC = () => {
   // }, [isOpen])
 
   return (
-    <Box>
+    <Box component='nav'>
       {/* TODO: Responsive design for SP */}
       {/* <Drawer variant='temporary' open={isOpen} onClose={onDrawerToggle}> */}
       <Hidden smDown>
