@@ -2,6 +2,7 @@ import { FC, memo, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { PROFILE_IMG_SRC } from 'constants/env'
+import { MESSAGE } from 'constants/message'
 import { ROUTES } from 'constants/route'
 
 import { Box, Hidden, List, ListItem, Paper, Typography } from '@mui/material'
@@ -21,7 +22,7 @@ const Sidebar: FC = () => {
 
   const onClickComingSoonPage = useCallback(() => {
     openToast({
-      message: 'Sorry, this page is coming soon',
+      message: MESSAGE.NOT_READY_PAGE,
       severity: 'info',
     })
   }, [])

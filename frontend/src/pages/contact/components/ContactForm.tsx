@@ -1,5 +1,7 @@
 import { FC, useCallback } from 'react'
 
+import { MESSAGE } from 'constants/message'
+
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
 import EmailIcon from '@mui/icons-material/Email'
@@ -20,7 +22,7 @@ const ContactForm: FC = () => {
   const mutation = useMutation(addContacts, {
     onSuccess: () => {
       openToast({
-        message: 'Your Message was sent successfully.',
+        message: MESSAGE.SUCCESSFUL,
         severity: 'success',
       })
       reset()
@@ -28,7 +30,7 @@ const ContactForm: FC = () => {
     onError: (error) => {
       console.log(error)
       openToast({
-        message: 'Failed to send your message.',
+        message: MESSAGE.FAIL,
         severity: 'error',
       })
     },
