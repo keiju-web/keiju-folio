@@ -8,13 +8,37 @@ import EmailIcon from '@mui/icons-material/Email'
 import { Box, InputAdornment, Paper, Typography } from '@mui/material'
 import { addContacts } from 'api/contact'
 import Button from 'components/button/Button'
+import { RULES } from 'components/rhf/constant'
 import { TextFieldController } from 'components/rhf/controllers/TextFieldController'
 import { useToast } from 'hooks/use-toast'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { RegisterOptions, SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation } from 'react-query'
 import { InsertContact } from 'types/contact'
 
-import { ContactFormType, REGISTER_OPTIONS } from './constant'
+type ContactFormType = {
+  name: string
+  email: string
+  message: string
+}
+
+const REGISTER_OPTIONS: {
+  name: RegisterOptions
+  email: RegisterOptions
+  message: RegisterOptions
+} = {
+  name: {
+    required: RULES.required,
+    maxLength: RULES.maxLength(20),
+  },
+  email: {
+    pattern: RULES.email,
+    maxLength: RULES.maxLength(100),
+  },
+  message: {
+    required: RULES.required,
+    maxLength: RULES.maxLength(500),
+  },
+}
 
 const ContactForm: FC = () => {
   const { openToast } = useToast()
