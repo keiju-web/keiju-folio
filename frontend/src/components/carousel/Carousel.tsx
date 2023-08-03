@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, memo } from 'react'
 
 import { Box, styled } from '@mui/material'
 import { CarouselProps, Carousel as ReactCarousel } from 'react-responsive-carousel'
@@ -31,4 +31,4 @@ const Carousel: FC<Props> = ({ slides, ...props }) => {
   )
 }
 
-export default Carousel
+export default memo(Carousel)
