@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from 'react'
+import { FC, ReactNode, useCallback, useState } from 'react'
 
 import { Box, Container, Grid, Paper, Typography } from '@mui/material'
 import Button from 'components/button/Button'
@@ -9,6 +9,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Carousel from './carousel/Carousel'
 import Pacman from './icon/Pacman'
+import { RULES } from './rhf/constant'
 import { CheckboxGroupController } from './rhf/controllers/CheckBoxGroupController'
 import { MultiComboBoxController } from './rhf/controllers/MultiComboBoxController'
 import { SelectController } from './rhf/controllers/SelectController'
@@ -21,6 +22,8 @@ import { Options } from './rhf/types'
 const Components: FC = () => {
   const { openModal } = useModal()
   const { openToast } = useToast()
+
+  const [isBtnLoading, setIsBtnLoading] = useState<boolean>(false)
 
   const onClickOpenModal = useCallback(() => {
     openModal({ title: 'TITLE TITLE', contents: <>CONTENTS CONTENTS</> })
@@ -37,6 +40,10 @@ const Components: FC = () => {
           alignItems: 'center',
         }}
       >
+        <Grid item xs={12}>
+          <SampleCarousel />
+        </Grid>
+
         <Grid item xs={3}>
           <Button mode='primary'>Primay</Button>
         </Grid>
@@ -122,14 +129,26 @@ const Components: FC = () => {
             Error
           </Button>
         </Grid>
+
         <Grid item xs={3}>
           <Pacman height='100px' width='100px' />
         </Grid>
-        <Grid item xs={9}>
-          <SampleForms />
+        <Grid item xs={5}>
+          <Button
+            onClick={() => {
+              setIsBtnLoading(true)
+              setTimeout(() => setIsBtnLoading(false), 3000)
+            }}
+            isLoading={isBtnLoading}
+            fullWidth
+          >
+            Click to Load!!
+          </Button>
         </Grid>
+        <Grid item xs={4}></Grid>
+
         <Grid item xs={12}>
-          <SampleCarousel />
+          <SampleForms />
         </Grid>
       </Grid>
     </Container>
@@ -166,7 +185,7 @@ const SampleForms = (): JSX.Element => {
     <Paper>
       <Box p={4} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextFieldController<Form>
-          registration={register('textField')}
+          registration={register('textField', { required: RULES.required })}
           textField={{
             muiTextField: {
               label: 'Label',

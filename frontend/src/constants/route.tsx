@@ -11,7 +11,7 @@ import Resume from 'pages/resume/Resume'
 type RouteName = 'Home' | 'About Me' | 'Resume' | 'Projects' | 'Contact'
 
 export type Route = Readonly<
-  Required<Pick<PathRouteProps, 'path' | 'element'>> & { name?: RouteName }
+  Required<Pick<PathRouteProps, 'path' | 'element'>> & { name?: RouteName; isComingSoon?: boolean }
 >
 
 /**
@@ -46,6 +46,7 @@ export const ROUTES: readonly Route[] = [
     path: '/projects',
     name: 'Projects',
     element: <Projects />,
+    isComingSoon: true,
   },
   {
     path: '/contact',

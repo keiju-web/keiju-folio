@@ -1,4 +1,4 @@
-import { FC, memo } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { PROFILE_IMG_SRC } from 'constants/env'
@@ -7,15 +7,24 @@ import { ROUTES } from 'constants/route'
 import { Box, Hidden, List, ListItem, Paper, Typography } from '@mui/material'
 import { styled } from '@mui/system'
 import Image from 'components/image/Image'
+import { useToast } from 'hooks/use-toast'
 import { fadeIn, slideInFromLeft, slideInFromRight } from 'styles/keyframes'
 
 const Sidebar: FC = () => {
   const location = useLocation()
+  const { openToast } = useToast()
   // const [isOpen, setIsOpen] = useState(false)
 
   // const onDrawerToggle = useCallback(() => {
   //   setIsOpen(!isOpen)
   // }, [isOpen])
+
+  const onClickComingSoonPage = useCallback(() => {
+    openToast({
+      message: 'Sorry, this page is coming soon',
+      severity: 'info',
+    })
+  }, [])
 
   return (
     <Box component='nav'>
@@ -49,14 +58,21 @@ const Sidebar: FC = () => {
                   animation: `${key % 2 === 0 ? slideInFromLeft : slideInFromRight} 1s ease-out`,
                 }}
               >
-                <Link to={route.path}>
-                  <BottomedTypography
-                    className={location.pathname === route.path ? 'active' : ''}
-                    sx={{ fontSize: '26px', color: 'text.secondary' }}
-                  >
-                    {route.name}
-                  </BottomedTypography>
-                </Link>
+                {route.isComingSoon ? (
+                  <Box sx={{ cursor: 'pointer' }}>
+                    <BottomedTypography onClick={onClickComingSoonPage}>
+                      {route.name}
+                    </BottomedTypography>
+                  </Box>
+                ) : (
+                  <Link to={route.path}>
+                    <BottomedTypography
+                      className={location.pathname === route.path ? 'active' : ''}
+                    >
+                      {route.name}
+                    </BottomedTypography>
+                  </Link>
+                )}
               </ListItem>
             ))}
           </List>
@@ -68,7 +84,7 @@ const Sidebar: FC = () => {
 }
 
 const BottomedTypography = styled(Typography)(({ theme }) => ({
-  fontSize: '24px',
+  fontSize: '26px',
   color: theme.palette.text.secondary,
   position: 'relative',
   '&::after': {

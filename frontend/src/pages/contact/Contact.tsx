@@ -7,7 +7,6 @@ import Image from 'components/image/Image'
 
 import ContactForm from './components/ContactForm'
 
-// const { data } = useSuspenseQuery('getAllContacts', () => getAllContacts())
 const Contact: FC = () => {
   return (
     <Container

@@ -36,24 +36,24 @@ export interface Database {
     Tables: {
       contact: {
         Row: {
-          content: string | null
           created_at: string | null
           email: string | null
           id: number
+          message: string | null
           name: string | null
         }
         Insert: {
-          content?: string | null
           created_at?: string | null
           email?: string | null
           id?: number
+          message?: string | null
           name?: string | null
         }
         Update: {
-          content?: string | null
           created_at?: string | null
           email?: string | null
           id?: number
+          message?: string | null
           name?: string | null
         }
         Relationships: []

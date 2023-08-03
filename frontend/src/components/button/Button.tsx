@@ -1,26 +1,42 @@
 import { FC, memo } from 'react'
 
+import { CircularProgress, Box } from '@mui/material'
 import { ButtonProps, Button as MuiButton } from '@mui/material'
 
 type Props = ButtonProps & {
   mode?: 'primary' | 'secondary'
   size?: 'small' | 'medium' | 'large'
+  isLoading?: boolean
 }
 
-const Button: FC<Props> = ({ children, mode = 'primary', size = 'medium', ...otherProps }) => {
+const Button: FC<Props> = ({
+  children,
+  mode = 'primary',
+  size = 'medium',
+  isLoading = false,
+  ...otherProps
+}) => {
   return (
     <MuiButton
       {...otherProps}
-      color='primary'
+      disabled={isLoading}
+      color={isLoading ? 'inherit' : 'primary'}
       size={size}
       variant={mode === 'primary' ? 'contained' : 'outlined'}
       sx={{
+        position: 'relative',
         textTransform: 'none',
         fontSize: '1.2rem',
         ...otherProps.sx,
       }}
     >
-      {children}
+      {isLoading ? (
+        <Box color='white' display='flex'>
+          <CircularProgress size={32} color='inherit' />
+        </Box>
+      ) : (
+        children
+      )}
     </MuiButton>
   )
 }
