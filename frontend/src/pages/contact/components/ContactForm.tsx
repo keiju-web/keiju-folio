@@ -30,7 +30,7 @@ const ContactForm: FC = () => {
     onError: (error) => {
       console.log(error)
       openToast({
-        message: MESSAGE.FAIL,
+        message: MESSAGE.FAILED,
         severity: 'error',
       })
     },
