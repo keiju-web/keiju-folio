@@ -17,34 +17,38 @@ const App: FC = () => {
     return <></>
   }
 
-  if (!session) {
-    return (
-      <Box display='flex' justifyContent='center'>
-        <Box width='300px'>
-          <Auth
-            supabaseClient={supabase}
-            appearance={{ theme: ThemeSupa }}
-            // TODO: Enabled
-            providers={['google', 'facebook', 'twitter']}
-          />
-        </Box>
-      </Box>
-    )
-  }
-
   return (
     <div className='App'>
       {/* Init CSS */}
       <CssBaseline />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            {ROUTES.map((route, key) => {
-              return <Route key={key} {...route} />
-            })}
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+
+      {session ? (
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              {ROUTES.map((route, key) => {
+                return <Route key={key} {...route} />
+              })}
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      ) : (
+        <Box
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          height='100vh'
+          bgcolor='#f5f5f5'
+        >
+          <Box width='80%' maxWidth='300px'>
+            <Auth
+              supabaseClient={supabase}
+              appearance={{ theme: ThemeSupa }}
+              providers={['google', 'facebook', 'twitter']}
+            />
+          </Box>
+        </Box>
+      )}
     </div>
   )
 }

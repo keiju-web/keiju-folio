@@ -19,7 +19,12 @@ export const queryClient = new QueryClient({
 
 /** MUI Global Theme */
 export const muiTheme = createTheme({
-  typography: { fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif' },
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    body1: {
+      fontSize: '20px',
+    },
+  },
   palette: {
     primary: {
       main: '#778899',

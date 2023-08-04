@@ -9,7 +9,7 @@ const Footer: FC = () => {
   return (
     <Box component='footer' sx={{ bgcolor: 'transparent', mt: 'auto' }}>
       <Container maxWidth='lg'>
-        <Typography variant='body1' align='center'>
+        <Typography variant='body2' align='center'>
           Copyright &copy; {year} Keiju Hikichi
         </Typography>
       </Container>

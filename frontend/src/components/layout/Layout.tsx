@@ -28,16 +28,16 @@ const Layout: FC<Props> = ({ children }) => {
   const modalProps = useModal()
   const toastProps = useToast()
 
-  const title = useMemo(() => {
-    const route = ROUTES.find((route) => route.path === location.pathname)
-    return route?.name ?? 'Folio'
-  }, [location.pathname])
+  const currentRoute = useMemo(
+    () => ROUTES.find((r) => r.path === location.pathname),
+    [location.pathname],
+  )
 
   return (
     <>
       <HelmetProvider>
         <Helmet>
-          <title>{title}</title>
+          <title>{currentRoute?.name ?? 'Folio'}</title>
         </Helmet>
       </HelmetProvider>
 
@@ -67,11 +67,12 @@ const Layout: FC<Props> = ({ children }) => {
             ml: { sm: '30%' },
             height: '100vh',
             overflow: 'auto',
+            bgcolor: currentRoute?.bgColor,
           }}
         >
           <ErrorBoundary fallback={<Error />}>
             <Suspense fallback={<Loading />}>
-              <Box component='main' my={4}>
+              <Box component='main' mt={4}>
                 {children}
               </Box>
             </Suspense>

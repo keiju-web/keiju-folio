@@ -5,7 +5,7 @@ import { ButtonProps, Button as MuiButton } from '@mui/material'
 
 type Props = ButtonProps & {
   mode?: 'primary' | 'secondary'
-  size?: 'small' | 'medium' | 'large'
+  size?: ButtonProps['size']
   isLoading?: boolean
 }
 

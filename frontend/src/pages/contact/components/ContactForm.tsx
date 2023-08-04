@@ -5,7 +5,7 @@ import { MESSAGE } from 'constants/message'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
 import EmailIcon from '@mui/icons-material/Email'
-import { Box, InputAdornment, Paper, Typography } from '@mui/material'
+import { Box, InputAdornment, Paper, Fade, Typography } from '@mui/material'
 import { addContacts } from 'api/contact'
 import Button from 'components/button/Button'
 import { RULES } from 'components/rhf/constant'
@@ -87,71 +87,73 @@ const ContactForm: FC = () => {
   )
 
   return (
-    <Paper elevation={8} sx={{ p: 4 }}>
-      <Box display='flex' justifyContent='center' mb={4}>
-        <Typography variant='h4' borderBottom={6} borderColor='#6495ed'>
-          Get in Touch
-        </Typography>
-      </Box>
+    <Fade in={true} timeout={2000}>
+      <Paper elevation={8} sx={{ p: 4 }}>
+        <Box display='flex' justifyContent='center' mb={4}>
+          <Typography variant='h4' borderBottom={6} borderColor='#6495ed'>
+            Get in Touch
+          </Typography>
+        </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <TextFieldController<ContactFormType>
-          registration={register('name', REGISTER_OPTIONS.name)}
-          textField={{
-            muiTextField: {
-              placeholder: 'Name',
-              InputProps: {
-                startAdornment: (
-                  <InputAdornment position='start'>
-                    <AccountBoxIcon />
-                  </InputAdornment>
-                ),
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <TextFieldController<ContactFormType>
+            registration={register('name', REGISTER_OPTIONS.name)}
+            textField={{
+              muiTextField: {
+                placeholder: 'Name',
+                InputProps: {
+                  startAdornment: (
+                    <InputAdornment position='start'>
+                      <AccountBoxIcon />
+                    </InputAdornment>
+                  ),
+                },
               },
-            },
-            fieldWrapper: {
-              errorMessage: errors.name?.message,
-            },
-          }}
-        />
-        <TextFieldController<ContactFormType>
-          registration={register('email', REGISTER_OPTIONS.email)}
-          textField={{
-            muiTextField: {
-              placeholder: 'Email',
-              InputProps: {
-                startAdornment: (
-                  <InputAdornment position='start'>
-                    <AlternateEmailIcon />
-                  </InputAdornment>
-                ),
+              fieldWrapper: {
+                errorMessage: errors.name?.message,
               },
-            },
-            fieldWrapper: {
-              errorMessage: errors.email?.message,
-            },
-          }}
-        />
-        <TextFieldController<ContactFormType>
-          registration={register('message', REGISTER_OPTIONS.message)}
-          textField={{
-            muiTextField: {
-              multiline: true,
-              label: 'Message',
-              placeholder: 'Write your message here...',
-              rows: 10,
-            },
-            fieldWrapper: {
-              errorMessage: errors.message?.message,
-            },
-          }}
-        />
+            }}
+          />
+          <TextFieldController<ContactFormType>
+            registration={register('email', REGISTER_OPTIONS.email)}
+            textField={{
+              muiTextField: {
+                placeholder: 'Email',
+                InputProps: {
+                  startAdornment: (
+                    <InputAdornment position='start'>
+                      <AlternateEmailIcon />
+                    </InputAdornment>
+                  ),
+                },
+              },
+              fieldWrapper: {
+                errorMessage: errors.email?.message,
+              },
+            }}
+          />
+          <TextFieldController<ContactFormType>
+            registration={register('message', REGISTER_OPTIONS.message)}
+            textField={{
+              muiTextField: {
+                multiline: true,
+                label: 'Message',
+                placeholder: 'Write your message here...',
+                rows: 10,
+              },
+              fieldWrapper: {
+                errorMessage: errors.message?.message,
+              },
+            }}
+          />
 
-        <Button sx={{ mt: 2 }} onClick={handleSubmit(onSubmit)} isLoading={mutation.isLoading}>
-          <EmailIcon sx={{ mr: 1 }} />
-          Send Message
-        </Button>
-      </Box>
-    </Paper>
+          <Button sx={{ mt: 2 }} onClick={handleSubmit(onSubmit)} isLoading={mutation.isLoading}>
+            <EmailIcon sx={{ mr: 1 }} />
+            Send Message
+          </Button>
+        </Box>
+      </Paper>
+    </Fade>
   )
 }
 

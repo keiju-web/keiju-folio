@@ -3,6 +3,7 @@ import { FC, ReactNode, useCallback, useState } from 'react'
 import { Box, Container, Grid, Paper, Typography } from '@mui/material'
 import Button from 'components/button/Button'
 import Loading from 'components/loading/Loading'
+import { useAuth } from 'hooks/use-auth'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -20,6 +21,7 @@ import { Options } from './rhf/types'
  * This is a page for confirmation of all common components on this app
  */
 const Components: FC = () => {
+  const { signOut } = useAuth()
   const { openModal } = useModal()
   const { openToast } = useToast()
 
@@ -145,7 +147,9 @@ const Components: FC = () => {
             Click to Load!!
           </Button>
         </Grid>
-        <Grid item xs={4}></Grid>
+        <Grid item xs={4}>
+          <Button onClick={signOut}>Sign out</Button>
+        </Grid>
 
         <Grid item xs={12}>
           <SampleForms />

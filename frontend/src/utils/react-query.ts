@@ -17,10 +17,14 @@ type UseQueryWithSuspenseResult<T> = RequireData<UseQueryResult<T, unknown>>
 export const useSuspenseQuery = <T extends unknown>(
   queryKey: QueryKey,
   fetcher: QueryFunction<T>,
-  cacheTime?: number,
+  option: {
+    cacheTime?: number
+    onError?: (e: unknown) => void
+  },
 ): UseQueryWithSuspenseResult<T> => {
   return useQuery(queryKey, fetcher, {
     suspense: true,
-    cacheTime: cacheTime ?? DEFAULT_CACHE_TIME,
+    cacheTime: option.cacheTime ?? DEFAULT_CACHE_TIME,
+    ...option,
   }) as any
 }

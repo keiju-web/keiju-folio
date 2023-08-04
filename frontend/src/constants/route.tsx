@@ -1,5 +1,6 @@
 import { PathRouteProps } from 'react-router-dom'
 
+import { BoxProps } from '@mui/material'
 import Components from 'components/Components'
 import Error from 'components/error/Error'
 import AboutMe from 'pages/about-me/AboutMe'
@@ -11,7 +12,11 @@ import Resume from 'pages/resume/Resume'
 type RouteName = 'Home' | 'About Me' | 'Resume' | 'Projects' | 'Contact'
 
 export type Route = Readonly<
-  Required<Pick<PathRouteProps, 'path' | 'element'>> & { name?: RouteName; isComingSoon?: boolean }
+  Required<Pick<PathRouteProps, 'path' | 'element'>> & {
+    name?: RouteName
+    isComingSoon?: boolean
+    bgColor?: BoxProps['bgcolor']
+  }
 >
 
 /**
@@ -35,6 +40,7 @@ export const ROUTES: readonly Route[] = [
   {
     path: '/about-me',
     name: 'About Me',
+    bgColor: '#ffebcd',
     element: <AboutMe />,
   },
   {
