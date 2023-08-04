@@ -3,9 +3,10 @@ import { FC } from 'react'
 import { ABOUT_ME_IMG_SRC } from 'constants/env'
 import { MESSAGE } from 'constants/message'
 
-import { Container, Typography, Box, Grow } from '@mui/material'
+import { Typography, Box, Grow } from '@mui/material'
 import { styled } from '@mui/system'
 import { getAllAboutMe } from 'api/about-me'
+import CenterContainer from 'components/container/CenterContainer'
 import Image from 'components/image/Image'
 import TextLines from 'components/text/TextLines'
 import { useToast } from 'hooks/use-toast'
@@ -26,7 +27,7 @@ const AboutMe: FC = () => {
   })
 
   return (
-    <Container>
+    <CenterContainer>
       <Box>
         <Grow in={true} timeout={1000}>
           <Typography variant='h3' align='center' fontWeight='bold'>
@@ -54,7 +55,7 @@ const AboutMe: FC = () => {
 
         <Image src={ABOUT_ME_IMG_SRC} alt='about-me' sx={{ width: '300px' }} />
       </Box>
-    </Container>
+    </CenterContainer>
   )
 }
 
