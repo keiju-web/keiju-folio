@@ -1,31 +1,19 @@
 import { FC } from 'react'
 
 import { ABOUT_ME_IMG_SRC } from 'constants/env'
-import { MESSAGE } from 'constants/message'
 
 import { Typography, Box, Grow } from '@mui/material'
 import { styled } from '@mui/system'
-import { getAllAboutMe } from 'api/about-me'
 import CenterContainer from 'components/container/CenterContainer'
 import Image from 'components/image/Image'
-import TextLines from 'components/text/TextLines'
-import { useToast } from 'hooks/use-toast'
-import { useSuspenseQuery } from 'utils/react-query'
+
+import Detail from './components/Detail'
 
 const Highlight = styled('span')({
   color: '#ff8c00',
 })
 
 const AboutMe: FC = () => {
-  const { openToast } = useToast()
-  const { data } = useSuspenseQuery('about-me', getAllAboutMe, {
-    onError: () =>
-      openToast({
-        message: MESSAGE.FAILED,
-        severity: 'error',
-      }),
-  })
-
   return (
     <CenterContainer>
       <Box>
@@ -43,15 +31,7 @@ const AboutMe: FC = () => {
           </Box>
         </Grow>
 
-        {data.map((d, i) => {
-          return (
-            <Grow key={i} in={true} timeout={i * 1000 + 2000}>
-              <Box mt={4}>
-                <TextLines text={d.content} />
-              </Box>
-            </Grow>
-          )
-        })}
+        <Detail />
 
         <Image src={ABOUT_ME_IMG_SRC} alt='about-me' sx={{ width: '300px' }} />
       </Box>

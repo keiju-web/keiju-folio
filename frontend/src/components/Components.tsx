@@ -8,8 +8,10 @@ import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import Accordion from './accordion/Accordion'
 import Carousel from './carousel/Carousel'
 import Pacman from './icon/Pacman'
+import LinearProgressWithLabel from './progress/LinearProgressWithLabel'
 import { RULES } from './rhf/constant'
 import { CheckboxGroupController } from './rhf/controllers/CheckBoxGroupController'
 import { MultiComboBoxController } from './rhf/controllers/MultiComboBoxController'
@@ -153,6 +155,15 @@ const Components: FC = () => {
 
         <Grid item xs={12}>
           <SampleForms />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Accordion title='AAA'>AAAAA</Accordion>
+          <Accordion title='BBB'>BBBBB</Accordion>
+          <Accordion title='CCC'>CCCCC</Accordion>
+        </Grid>
+        <Grid item xs={12}>
+          <LinearProgressWithLabel value={50} />
         </Grid>
       </Grid>
     </Container>

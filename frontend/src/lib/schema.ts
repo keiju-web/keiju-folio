@@ -76,6 +76,48 @@ export interface Database {
         }
         Relationships: []
       }
+      resume: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: number
+          title: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: number
+          title: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: number
+          title?: string
+        }
+        Relationships: []
+      }
+      skill_value: {
+        Row: {
+          created_at: string | null
+          id: number
+          title: string
+          value: number
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          title: string
+          value: number
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          title?: string
+          value?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

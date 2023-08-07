@@ -12,8 +12,8 @@ import { RULES } from 'components/rhf/constant'
 import { TextFieldController } from 'components/rhf/controllers/TextFieldController'
 import { useToast } from 'hooks/use-toast'
 import { RegisterOptions, SubmitHandler, useForm } from 'react-hook-form'
-import { useMutation } from 'react-query'
 import { InsertContact } from 'types/contact'
+import { useCommonMutation } from 'utils/react-query'
 
 type ContactFormType = {
   name: string
@@ -43,20 +43,13 @@ const REGISTER_OPTIONS: {
 const ContactForm: FC = () => {
   const { openToast } = useToast()
   /** POST Contact */
-  const mutation = useMutation(addContacts, {
+  const mutation = useCommonMutation(addContacts, {
     onSuccess: () => {
       openToast({
         message: MESSAGE.SUCCESSFUL,
         severity: 'success',
       })
       reset()
-    },
-    onError: (error) => {
-      console.log(error)
-      openToast({
-        message: MESSAGE.FAILED,
-        severity: 'error',
-      })
     },
   })
 

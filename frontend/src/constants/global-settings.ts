@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { Theme, createTheme } from '@mui/material/styles'
 import { createClient } from '@supabase/supabase-js'
 import { QueryClient } from 'react-query'
 
@@ -18,11 +18,14 @@ export const queryClient = new QueryClient({
 })
 
 /** MUI Global Theme */
-export const muiTheme = createTheme({
+export const muiTheme: Theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     body1: {
       fontSize: '20px',
+    },
+    body2: {
+      fontSize: '16px',
     },
   },
   palette: {
@@ -31,6 +34,7 @@ export const muiTheme = createTheme({
     },
     secondary: {
       main: '#ff8c00',
+      light: '#f8f8ff',
     },
     text: {
       primary: '#000',

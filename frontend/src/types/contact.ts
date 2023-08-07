@@ -1,7 +1,9 @@
 import { Database } from 'lib/schema'
 
-export type Contact = Database['public']['Tables']['contact']['Row']
+import { SnakeToCamel } from './util'
 
-export type InsertContact = Database['public']['Tables']['contact']['Insert']
+export type Contact = SnakeToCamel<Database['public']['Tables']['contact']['Row']>
 
-export type UpdateContact = Database['public']['Tables']['contact']['Update']
+export type InsertContact = SnakeToCamel<Database['public']['Tables']['contact']['Insert']>
+
+export type UpdateContact = SnakeToCamel<Database['public']['Tables']['contact']['Update']>
