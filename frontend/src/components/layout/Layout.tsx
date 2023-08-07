@@ -75,10 +75,9 @@ const Layout: FC<Props> = ({ children }) => {
               <Box component='main' mt={4}>
                 {children}
               </Box>
+              <Footer />
             </Suspense>
           </ErrorBoundary>
-
-          <Footer />
         </Box>
       </Box>
 

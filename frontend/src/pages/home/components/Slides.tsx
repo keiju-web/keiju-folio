@@ -10,7 +10,7 @@ const createSlide = (content: string, key: number): ReactNode => (
   </Typography>
 )
 
-// TODO: Make below API response
+// TODO: Make the following API response
 const slideContents = [
   "I'm a Full-Stack 🌏developer",
   "🖐️I'm Keiju Hikichi",

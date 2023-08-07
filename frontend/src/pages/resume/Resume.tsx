@@ -16,6 +16,7 @@ const Resume: FC = () => {
     <CenterContainer>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6}>
+          {/* TODO: Make the following into components */}
           {data.map((d, i) => {
             return (
               <Grow key={i} in={true} timeout={i * 2000}>

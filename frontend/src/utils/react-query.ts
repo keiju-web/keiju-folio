@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
-import { DEFAULT_CACHE_TIME } from 'constants/global-settings'
 import { MESSAGE } from 'constants/message'
 
 import { useToast } from 'hooks/use-toast'
@@ -23,7 +22,6 @@ export const useCommonQuery = <T extends unknown>(
 ): UseQueryWithSuspenseResult<T> => {
   const { openToast } = useToast()
   return useQuery(queryKey, fetcher, {
-    cacheTime: options?.cacheTime ?? DEFAULT_CACHE_TIME,
     ...options,
     onError: (err: unknown) => {
       console.log(err)
@@ -48,7 +46,6 @@ export const useSuspenseQuery = <T extends unknown>(
   const { openToast } = useToast()
   return useQuery(queryKey, fetcher, {
     suspense: true,
-    cacheTime: options?.cacheTime ?? DEFAULT_CACHE_TIME,
     onError: (err: unknown) => {
       console.log(err)
       openToast({

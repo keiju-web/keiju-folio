@@ -8,7 +8,7 @@ import { SUPABASE_API_KEY, SUPABASE_PROJECT_URL } from './env'
 export const supabase = createClient(SUPABASE_PROJECT_URL, SUPABASE_API_KEY)
 
 /** React Query client */
-export const DEFAULT_CACHE_TIME = 1000 * 60 * 5 // 5 min
+export const DEFAULT_CACHE_TIME = 1000 * 60 * 10 // 10 min
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
