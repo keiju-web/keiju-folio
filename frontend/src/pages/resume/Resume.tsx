@@ -19,7 +19,7 @@ const Resume: FC = () => {
           {/* TODO: Make the following into components */}
           {data.map((d, i) => {
             return (
-              <Grow key={i} in={true} timeout={i * 2000}>
+              <Grow key={i} in={true} timeout={(i + 1) * 2000}>
                 <Box mt={2}>
                   <Accordion title={d.title}>
                     <TextLines text={d.content} />

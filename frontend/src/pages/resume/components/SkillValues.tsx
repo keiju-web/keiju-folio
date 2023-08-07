@@ -24,7 +24,7 @@ const SkillValues: FC = () => {
         .sort((a, b) => b.value - a.value)
         .map((d, i) => {
           return (
-            <Grow key={i} in={true} timeout={i * 500}>
+            <Grow key={i} in={true} timeout={(i + 1) * 500}>
               <Box>
                 <Typography>{d.title}</Typography>
                 <LinearProgressWithLabel color={getLinearColor(d.value)} value={d.value} />
