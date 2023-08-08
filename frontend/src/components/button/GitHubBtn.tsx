@@ -14,7 +14,7 @@ const GitHubBtn: FC<Props> = (props) => {
   }, [])
 
   return (
-    <IconButton onClick={onClick} color='inherit' {...props}>
+    <IconButton onClick={onClick} {...props} sx={{ color: 'text.secondary', ...props.sx }}>
       <GitHubIcon fontSize='large' />
     </IconButton>
   )
