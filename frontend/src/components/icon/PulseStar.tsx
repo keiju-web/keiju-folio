@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import StarIcon from '@mui/icons-material/Star'
+import { IconProps } from '@mui/material'
 import { styled } from '@mui/system'
 import { pulse } from 'styles/keyframes'
 
@@ -10,7 +11,7 @@ const PulsingIcon = styled(StarIcon)(({ theme }) => ({
 }))
 
 type Props = {
-  size?: 'small' | 'inherit' | 'medium' | 'large'
+  size?: IconProps['fontSize']
 }
 
 const PulseStar: FC<Props> = ({ size = 'medium' }) => <PulsingIcon fontSize={size} />
