@@ -28,14 +28,14 @@ export const FieldWrapper: FC<FieldWrapperProps> = ({
         <Box sx={{ display: 'flex', gap: 0.5 }}>
           <Typography sx={{ fontSize: 20 }}>{label}</Typography>
           {required && (
-            <Typography color='error' fontSize={12}>
+            <Typography color='error' fontSize={'12px !important'}>
               ※Required
             </Typography>
           )}
         </Box>
         {children}
         {errorMessage && (
-          <Typography color='error' fontSize={12}>
+          <Typography color='error' fontSize={'12px !important'}>
             {errorMessage}
           </Typography>
         )}

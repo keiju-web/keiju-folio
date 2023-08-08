@@ -1,7 +1,16 @@
-import { FC, ReactNode, memo } from 'react'
+import { FC, ReactNode, memo, useMemo } from 'react'
 
 import CloseIcon from '@mui/icons-material/Close'
-import { Modal as MuiModal, Box, Typography, Divider, IconButton } from '@mui/material'
+import {
+  Modal as MuiModal,
+  Box,
+  Typography,
+  Divider,
+  IconButton,
+  Slide,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 
 export type ModalProps = {
   isOpen: boolean
@@ -12,15 +21,12 @@ export type ModalProps = {
 
 const Modal: FC<ModalProps> = (props) => {
   const { isOpen, title, contents, closeModal } = props
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
-  return (
-    <MuiModal
-      open={isOpen}
-      onClose={closeModal}
-      aria-labelledby='modal-title'
-      aria-describedby='modal-description'
-    >
-      <Box sx={boxSxProps}>
+  const modalContents = useMemo(
+    () => (
+      <Box sx={isMobile ? mobileBoxSxProps : boxSxProps}>
         <IconButton onClick={closeModal} sx={{ position: 'absolute', top: '8px', right: '8px' }}>
           <CloseIcon />
         </IconButton>
@@ -34,6 +40,24 @@ const Modal: FC<ModalProps> = (props) => {
           {contents}
         </Box>
       </Box>
+    ),
+    [contents, isMobile, title],
+  )
+
+  return (
+    <MuiModal
+      open={isOpen}
+      onClose={closeModal}
+      aria-labelledby='modal-title'
+      aria-describedby='modal-description'
+    >
+      {isMobile ? (
+        <Slide direction='up' in={isOpen} mountOnEnter unmountOnExit>
+          {modalContents}
+        </Slide>
+      ) : (
+        modalContents
+      )}
     </MuiModal>
   )
 }
@@ -49,6 +73,17 @@ const boxSxProps = {
   borderRadius: '20px',
   overflowY: 'auto',
   maxHeight: '80%',
+}
+
+const mobileBoxSxProps = {
+  ...boxSxProps,
+  position: 'fixed',
+  top: 'auto',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  transform: 'none',
+  borderRadius: '20px 20px 0 0',
 }
 
 export default memo(Modal)

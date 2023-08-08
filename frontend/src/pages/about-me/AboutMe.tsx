@@ -16,7 +16,7 @@ const Highlight = styled('span')({
 const AboutMe: FC = () => {
   return (
     <CenterContainer>
-      <Box>
+      <Box mb={-12}>
         <Grow in={true} timeout={500}>
           <Typography variant='h3' align='center' fontWeight='bold'>
             About Me

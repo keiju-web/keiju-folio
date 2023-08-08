@@ -97,6 +97,24 @@ export interface Database {
         }
         Relationships: []
       }
+      short_message: {
+        Row: {
+          created_at: string | null
+          id: number
+          message: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          message: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          message?: string
+        }
+        Relationships: []
+      }
       skill_value: {
         Row: {
           created_at: string | null

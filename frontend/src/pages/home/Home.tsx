@@ -39,9 +39,19 @@ const Home: FC = () => {
 
       <Slides />
 
-      <Box mt={4}>
+      <Box
+        mt={4}
+        sx={{
+          display: 'flex',
+          flexDirection: {
+            xs: 'column',
+            sm: 'row',
+          },
+          alignItems: 'center',
+        }}
+      >
         <Button onClick={onClickContactMe}>Contact Me</Button>
-        <CVDownloadBtn sx={{ ml: 2 }} />
+        <CVDownloadBtn sx={{ ml: { xs: 0, sm: 2 }, mt: { xs: 2, sm: 0 } }} />
       </Box>
     </CenterContainer>
   )

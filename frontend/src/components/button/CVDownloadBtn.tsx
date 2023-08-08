@@ -43,12 +43,23 @@ const ModalContents: FC = () => {
 
   return (
     <Container>
-      <Grid container spacing={4} sx={{ mt: 2, width: '400px' }}>
-        <Grid item xs={12} sm={6}>
-          <Button onClick={onClickJP}>JAPANESE ver</Button>
-        </Grid>
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          mt: 2,
+          minWidth: { md: '400px' },
+          '& .MuiGrid-item': {
+            display: 'flex',
+            justifyContent: 'center',
+          },
+        }}
+      >
         <Grid item xs={12} sm={6}>
           <Button onClick={onClickEN}>ENGLISH ver</Button>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Button onClick={onClickJP}>JAPANESE ver</Button>
         </Grid>
       </Grid>
     </Container>
