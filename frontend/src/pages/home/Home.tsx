@@ -5,6 +5,7 @@ import { ROUTE_PATH } from 'constants/route'
 
 import { Box, Typography } from '@mui/material'
 import Button from 'components/button/Button'
+import CVDownloadBtn from 'components/button/CVDownloadBtn'
 import CenterContainer from 'components/container/CenterContainer'
 import PulseStar from 'components/icon/PulseStar'
 import { fadeInWithTranslate } from 'styles/keyframes'
@@ -21,7 +22,9 @@ const Home: FC = () => {
   return (
     <CenterContainer
       sx={{
-        padding: '0px !important',
+        height: 'calc(100vh - 100px)',
+        mt: { xs: -8, md: -4 },
+        p: '0px !important',
       }}
     >
       <PulseStar />
@@ -38,6 +41,7 @@ const Home: FC = () => {
 
       <Box mt={4}>
         <Button onClick={onClickContactMe}>Contact Me</Button>
+        <CVDownloadBtn sx={{ ml: 2 }} />
       </Box>
     </CenterContainer>
   )

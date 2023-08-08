@@ -17,13 +17,13 @@ const AboutMe: FC = () => {
   return (
     <CenterContainer>
       <Box>
-        <Grow in={true} timeout={1000}>
+        <Grow in={true} timeout={500}>
           <Typography variant='h3' align='center' fontWeight='bold'>
             About Me
           </Typography>
         </Grow>
 
-        <Grow in={true} timeout={2000}>
+        <Grow in={true} timeout={1000}>
           <Box mt={6}>
             <Typography variant='h4'>
               {"I'm"} <Highlight>Keiju Hikichi</Highlight>, a Web Developer.

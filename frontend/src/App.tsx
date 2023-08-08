@@ -8,6 +8,7 @@ import { Box, CssBaseline } from '@mui/material'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import Layout from 'components/layout/Layout'
+import ScrollTop from 'components/util/ScrollTop'
 import { useAuth } from 'hooks/use-auth'
 
 const App: FC = () => {
@@ -24,6 +25,7 @@ const App: FC = () => {
 
       {session ? (
         <BrowserRouter>
+          <ScrollTop />
           <Layout>
             <Routes>
               {ROUTES.map((route, key) => {

@@ -12,7 +12,7 @@ const Detail: FC = () => {
     <>
       {data.map((d, i) => {
         return (
-          <Grow key={i} in={true} timeout={i * 1000 + 2000}>
+          <Grow key={i} in={true} timeout={i * 500 + 1000}>
             <Box mt={4}>
               <TextLines text={d.content} />
             </Box>

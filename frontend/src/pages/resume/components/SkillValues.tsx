@@ -17,7 +17,7 @@ const SkillValues: FC = () => {
 
   return (
     <>
-      <Typography variant='h5' textAlign='center' mt={-4}>
+      <Typography variant='h5' textAlign='center'>
         My skill overview
       </Typography>
       {data

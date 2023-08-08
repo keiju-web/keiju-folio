@@ -14,3 +14,15 @@ export const calculateAge = (birthdate: Date): number => {
 
   return age
 }
+
+/**
+ * Download file.
+ * @param url File url
+ * @param fileName File Name when downloaded
+ */
+export const handleDownload = (url: string, fileName: string): void => {
+  const link = document.createElement('a')
+  link.href = url
+  link.download = fileName
+  link.click()
+}

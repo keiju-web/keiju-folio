@@ -50,7 +50,7 @@ const Layout: FC<Props> = ({ children }) => {
       >
         <Box
           sx={{
-            width: { sm: '30%' },
+            width: { md: '30%' },
             position: 'fixed',
             height: '100vh',
             overflow: 'hidden',
@@ -63,8 +63,8 @@ const Layout: FC<Props> = ({ children }) => {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: { sm: '70%' },
-            ml: { sm: '30%' },
+            width: { md: '70%' },
+            ml: { md: '30%' },
             height: '100vh',
             overflow: 'auto',
             bgcolor: currentRoute?.bgColor,
@@ -72,7 +72,7 @@ const Layout: FC<Props> = ({ children }) => {
         >
           <ErrorBoundary fallback={<Error />}>
             <Suspense fallback={<Loading />}>
-              <Box component='main' mt={4}>
+              <Box component='main' my={{ xs: 8, md: 4 }}>
                 {children}
               </Box>
               <Footer />

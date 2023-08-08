@@ -12,7 +12,7 @@ export type ToastProps = {
 }
 
 const SlideTransition = forwardRef<unknown, SlideProps>(function Transition(props, ref) {
-  return <Slide {...props} direction='right' ref={ref} />
+  return <Slide {...props} direction='up' ref={ref} />
 })
 
 const Toast: FC<ToastProps> = (props) => {

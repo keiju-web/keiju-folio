@@ -13,7 +13,6 @@ const CenterContainer: FC<Props> = ({ children, ...props }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: 'calc(100vh - 100px)',
         ...props.sx,
       }}
     >

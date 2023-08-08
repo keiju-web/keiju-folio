@@ -1,24 +1,81 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { PROFILE_IMG_SRC } from 'constants/env'
 import { MESSAGE } from 'constants/message'
 import { ROUTES } from 'constants/route'
 
-import { Box, Hidden, List, ListItem, Paper, Typography } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import {
+  AppBar,
+  Box,
+  Drawer,
+  Hidden,
+  IconButton,
+  List,
+  ListItem,
+  Paper,
+  Toolbar,
+  Typography,
+  useTheme,
+} from '@mui/material'
 import { styled } from '@mui/system'
 import Image from 'components/image/Image'
 import { useToast } from 'hooks/use-toast'
 import { fadeIn, slideInFromLeft, slideInFromRight } from 'styles/keyframes'
 
 const Sidebar: FC = () => {
+  const theme = useTheme()
+
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false)
+
+  const handleDrawerToggle = useCallback(() => {
+    setDrawerOpen(!drawerOpen)
+  }, [drawerOpen])
+
+  return (
+    <Box component='nav'>
+      <Hidden mdUp>
+        <AppBar position='static'>
+          <Toolbar sx={{ pr: 1 }}>
+            <IconButton
+              edge='start'
+              aria-label='open drawer'
+              onClick={handleDrawerToggle}
+              sx={{
+                bgcolor: 'primary.main',
+              }}
+            >
+              <MenuIcon
+                fontSize='large'
+                style={{
+                  color: theme.palette.background.default,
+                }}
+              />
+            </IconButton>
+            <Drawer
+              variant='temporary'
+              anchor='left'
+              open={drawerOpen}
+              onClose={handleDrawerToggle}
+              PaperProps={{ style: { width: '80%' } }}
+            >
+              <Contents handleDrawerToggle={handleDrawerToggle} />
+            </Drawer>
+          </Toolbar>
+        </AppBar>
+      </Hidden>
+
+      <Hidden mdDown>
+        <Contents />
+      </Hidden>
+    </Box>
+  )
+}
+
+const Contents: FC<{ handleDrawerToggle?: () => void }> = (props) => {
   const location = useLocation()
   const { openToast } = useToast()
-  // const [isOpen, setIsOpen] = useState(false)
-
-  // const onDrawerToggle = useCallback(() => {
-  //   setIsOpen(!isOpen)
-  // }, [isOpen])
 
   const onClickComingSoonPage = useCallback(() => {
     openToast({
@@ -28,64 +85,58 @@ const Sidebar: FC = () => {
   }, [])
 
   return (
-    <Box component='nav'>
-      {/* TODO: Responsive design for SP */}
-      {/* <Drawer variant='temporary' open={isOpen} onClose={onDrawerToggle}> */}
-      <Hidden smDown>
-        <Paper elevation={12} sx={{ backgroundColor: 'primary.main', height: '100vh' }}>
-          <Box pt={8} pb={2}>
-            <Image
-              image={PROFILE_IMG_SRC}
-              alt='profile-pic'
-              sx={{
-                animation: `${fadeIn} 4s`,
-                // Fixed image size
-                width: '200px',
-                height: '200px',
-              }}
-            />
-            <Typography mt={2} variant='h4' component='h1' color='textSecondary' textAlign='center'>
-              Keiju Hikichi
-            </Typography>
-          </Box>
+    <Paper elevation={12} sx={{ backgroundColor: 'primary.main', height: '100vh' }}>
+      <Box pt={8} pb={2}>
+        <Image
+          image={PROFILE_IMG_SRC}
+          alt='profile-pic'
+          sx={{
+            animation: `${fadeIn} 4s`,
+            // Fixed image size
+            width: { xs: '100px', sm: '200px' },
+            height: { xs: '100px', sm: '200px' },
+          }}
+        />
+        <Typography mt={2} variant='h4' color='textSecondary' textAlign='center'>
+          Keiju Hikichi
+        </Typography>
+      </Box>
 
-          <List>
-            {ROUTES.filter((route) => route.name).map((route, key) => (
-              <ListItem
-                key={key}
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  animation: `${key % 2 === 0 ? slideInFromLeft : slideInFromRight} 1s ease-out`,
-                }}
-              >
-                {route.isComingSoon ? (
-                  <Box sx={{ cursor: 'pointer' }}>
-                    <BottomedTypography onClick={onClickComingSoonPage}>
-                      {route.name}
-                    </BottomedTypography>
-                  </Box>
-                ) : (
-                  <Link to={route.path}>
-                    <BottomedTypography
-                      className={location.pathname === route.path ? 'active' : ''}
-                    >
-                      {route.name}
-                    </BottomedTypography>
-                  </Link>
-                )}
-              </ListItem>
-            ))}
-          </List>
-        </Paper>
-      </Hidden>
-      {/* </Drawer> */}
-    </Box>
+      <List>
+        {ROUTES.filter((route) => route.name).map((route, key) => (
+          <ListItem
+            key={key}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              animation: `${key % 2 === 0 ? slideInFromLeft : slideInFromRight} 1s ease-out`,
+            }}
+          >
+            {route.isComingSoon ? (
+              <Box sx={{ cursor: 'pointer' }}>
+                <BottomedTypography onClick={onClickComingSoonPage}>
+                  {route.name}
+                </BottomedTypography>
+              </Box>
+            ) : (
+              <Link to={route.path} onClick={props.handleDrawerToggle}>
+                <BottomedTypography className={location.pathname === route.path ? 'active' : ''}>
+                  {route.name}
+                </BottomedTypography>
+              </Link>
+            )}
+          </ListItem>
+        ))}
+      </List>
+    </Paper>
   )
 }
 
 const BottomedTypography = styled(Typography)(({ theme }) => ({
-  fontSize: '26px',
+  fontSize: '26px !important',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '20px !important',
+  },
   color: theme.palette.text.secondary,
   position: 'relative',
   '&::after': {

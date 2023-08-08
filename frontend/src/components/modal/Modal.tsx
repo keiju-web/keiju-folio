@@ -1,6 +1,7 @@
 import { FC, ReactNode, memo } from 'react'
 
-import { Modal as MuiModal, Box, Typography, Divider } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
+import { Modal as MuiModal, Box, Typography, Divider, IconButton } from '@mui/material'
 
 export type ModalProps = {
   isOpen: boolean
@@ -20,14 +21,18 @@ const Modal: FC<ModalProps> = (props) => {
       aria-describedby='modal-description'
     >
       <Box sx={boxSxProps}>
+        <IconButton onClick={closeModal} sx={{ position: 'absolute', top: '8px', right: '8px' }}>
+          <CloseIcon />
+        </IconButton>
+
         <Typography id='modal-title' variant='h6' component='h2'>
           {title}
         </Typography>
         <Divider sx={{ mb: 2 }} />
 
-        <Typography id='modal-description' variant='body1' mb={2}>
+        <Box id='modal-description' mb={2}>
           {contents}
-        </Typography>
+        </Box>
       </Box>
     </MuiModal>
   )
@@ -38,11 +43,12 @@ const boxSxProps = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
   borderRadius: '20px',
+  overflowY: 'auto',
+  maxHeight: '80%',
 }
 
 export default memo(Modal)
