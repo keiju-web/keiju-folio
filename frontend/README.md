@@ -10,8 +10,9 @@
 - useContext modal
 - useContext toast
 - RHF - MUI
-
+- Splash & Favicon
 - Footer
+
 - mock
 
 ## Set up supabase
