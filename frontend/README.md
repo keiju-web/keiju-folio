@@ -1,19 +1,23 @@
-# TODO
+# TODO (DONE)
 
-- eslint
-- materialUI
+- eslint & prettier
 - supabase auth type
 - router settings
 - Layout Title
-- react-query
-- common Loading Suspense
-- useContext modal
-- useContext toast
-- RHF - MUI
-- Splash & Favicon
 - Footer
+- react-query
+- Suspense & ErrorBoundary
+- useContext modal & toast
+- RHF - MUI
+- Responsive
+- Splash & Favicon
+- Deploy by Vercel
 
-- mock
+# TODO (NOT DONE)
+
+- Mock Service Worker
+- Rich UI
+- Fix bugs on iOS
 
 ## Set up supabase
 
