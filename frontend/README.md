@@ -1,7 +1,7 @@
 # TODO (DONE)
 
 - eslint & prettier
-- supabase auth type
+- Supabase Linkage
 - router settings
 - Layout Title
 - Footer
