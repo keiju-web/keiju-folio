@@ -9,7 +9,6 @@ type Props = IconButtonProps
 
 const GitHubBtn: FC<Props> = (props) => {
   const onClick = useCallback(() => {
-    console.log(REPOSITORY_URL)
     window.open(REPOSITORY_URL, '_blank')
   }, [])
 
