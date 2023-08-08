@@ -28,7 +28,7 @@ const Slides: FC = () => {
         axis={isMobileSize ? 'vertical' : 'horizontal'}
         autoPlay
         transitionTime={3000}
-        interval={7000}
+        interval={5000}
         showArrows={false}
         showStatus={false}
         showIndicators={false}
