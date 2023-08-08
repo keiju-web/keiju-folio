@@ -80,7 +80,7 @@ const ContactForm: FC = () => {
   )
 
   return (
-    <Fade in={true} timeout={2000}>
+    <Fade in timeout={2000}>
       <Paper elevation={8} sx={{ p: 4 }}>
         <Box display='flex' justifyContent='center' mb={4}>
           <Typography variant='h4' borderBottom={6} borderColor='#6495ed'>

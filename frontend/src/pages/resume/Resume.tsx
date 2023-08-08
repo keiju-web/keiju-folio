@@ -19,7 +19,7 @@ const Resume: FC = () => {
         <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
           {data.map((d, i) => {
             return (
-              <Grow key={i} in={true} timeout={(i + 1) * 500}>
+              <Grow key={i} in timeout={(i + 1) * 500}>
                 <Box mt={2}>
                   <Accordion title={d.title}>
                     <TextLines text={d.content} />
