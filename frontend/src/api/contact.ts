@@ -5,7 +5,7 @@ import { Contact, InsertContact } from 'types/contact'
 const TABLE_NAME = 'contact'
 
 export const getAllContacts = async (): Promise<Contact[]> => {
-  const res = await supabase.from(TABLE_NAME).select('*')
+  const res = await supabase.from(TABLE_NAME).select('*').order('id', { ascending: true })
   return res.data as Contact[]
 }
 
