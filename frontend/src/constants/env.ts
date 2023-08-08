@@ -11,3 +11,6 @@ export const CONTACT_US_IMG_SRC = `${PUBLIC_URL}/images/contact-us.gif`
 export const ABOUT_ME_IMG_SRC = `${PUBLIC_URL}/images/about-me.gif`
 export const ENGLISH_CV = `${PUBLIC_URL}/cv/english-cv.txt`
 export const JAPANESE_CV = `${PUBLIC_URL}/cv/japanese-cv.txt`
+
+/** External URL */
+export const REPOSITORY_URL = process.env.REACT_APP_REPOSITORY_URL as string

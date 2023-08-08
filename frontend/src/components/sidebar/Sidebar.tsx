@@ -20,6 +20,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { styled } from '@mui/system'
+import GitHubBtn from 'components/button/GitHubBtn'
 import Image from 'components/image/Image'
 import { useToast } from 'hooks/use-toast'
 import { fadeIn, slideInFromLeft, slideInFromRight } from 'styles/keyframes'
@@ -127,6 +128,9 @@ const Contents: FC<{ handleDrawerToggle?: () => void }> = (props) => {
             )}
           </ListItem>
         ))}
+        <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
+          <GitHubBtn />
+        </ListItem>
       </List>
     </Paper>
   )

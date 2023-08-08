@@ -22,5 +22,5 @@ You can view the live demo [here](https://keiju-folio-ipq680u4l-keiju-web.vercel
 - MUI
 - React Router Dom
 - React Hook Form
-- etc.
 - Supabase as Backend
+- etc.
