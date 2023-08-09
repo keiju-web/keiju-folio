@@ -6,7 +6,7 @@ This is my personal portfolio built with React. It showcases my skills, experien
 
 ## Live Demo
 
-You can view the live demo [here](https://keiju-folio-ipq680u4l-keiju-web.vercel.app/).
+You can view the live demo [here](https://keiju-folio-keiju-web.vercel.app/).
 
 ## Features
 
