@@ -141,10 +141,10 @@ const BottomedTypography = styled(Typography)(({ theme }) => ({
     fontSize: '30px !important',
   },
   [theme.breakpoints.between('md', 'xl')]: {
-    fontSize: '26px !important',
+    fontSize: '28px !important',
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '20px !important',
+    fontSize: '24px !important',
   },
   color: theme.palette.text.secondary,
   position: 'relative',

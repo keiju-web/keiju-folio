@@ -23,7 +23,8 @@ const Home: FC = () => {
     <CenterContainer
       sx={{
         height: 'calc(100vh - 100px)',
-        p: '0px !important',
+        my: { xs: -8, md: -4 },
+        px: '0px !important',
       }}
     >
       <PulseStar />
