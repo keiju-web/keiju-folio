@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react'
 
-import { ENGLISH_CV, JAPANESE_CV } from 'constants/env'
+import { CV_EN, CV_JP } from 'constants/env'
 
 import DownloadIcon from '@mui/icons-material/Download'
 import { ButtonProps, Container, Grid } from '@mui/material'
@@ -31,13 +31,13 @@ const CVDownloadBtn: FC<Props> = (props) => {
 const ModalContents: FC = () => {
   const { closeModal } = useModal()
 
-  const onClickJP = useCallback(() => {
-    handleDownload(JAPANESE_CV, 'cv_hikichi_keiju_jp.txt')
+  const onClickEN = useCallback(() => {
+    handleDownload(CV_EN, 'cv_en.pdf')
     closeModal()
   }, [])
 
-  const onClickEN = useCallback(() => {
-    handleDownload(ENGLISH_CV, 'cv_hikichi_keiju_en.txt')
+  const onClickJP = useCallback(() => {
+    handleDownload(CV_JP, 'cv_jp.pdf')
     closeModal()
   }, [])
 
