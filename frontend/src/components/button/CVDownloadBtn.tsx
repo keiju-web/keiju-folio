@@ -32,12 +32,12 @@ const ModalContents: FC = () => {
   const { closeModal } = useModal()
 
   const onClickEN = useCallback(() => {
-    handleDownload(CV_EN, 'cv_en.pdf')
+    handleDownload(CV_EN, 'cv_en.zip')
     closeModal()
   }, [])
 
   const onClickJP = useCallback(() => {
-    handleDownload(CV_JP, 'cv_jp.pdf')
+    handleDownload(CV_JP, 'cv_jp.zip')
     closeModal()
   }, [])
 

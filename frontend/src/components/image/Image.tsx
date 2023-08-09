@@ -2,11 +2,11 @@ import { FC, memo } from 'react'
 
 import { Box, Card, CardMedia, CardMediaProps } from '@mui/material'
 
-type Props = CardMediaProps & {
+export type ImageProps = CardMediaProps & {
   alt: string
 }
 
-const Image: FC<Props> = (props) => {
+const Image: FC<ImageProps> = (props) => {
   return (
     <Card elevation={0} sx={{ bgcolor: 'inherit', display: 'flex', justifyContent: 'center' }}>
       <Box>

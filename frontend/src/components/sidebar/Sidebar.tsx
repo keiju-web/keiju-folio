@@ -137,7 +137,12 @@ const Contents: FC<{ handleDrawerToggle?: () => void }> = (props) => {
 }
 
 const BottomedTypography = styled(Typography)(({ theme }) => ({
-  fontSize: '26px !important',
+  [theme.breakpoints.up('xl')]: {
+    fontSize: '30px !important',
+  },
+  [theme.breakpoints.between('md', 'xl')]: {
+    fontSize: '26px !important',
+  },
   [theme.breakpoints.down('sm')]: {
     fontSize: '20px !important',
   },

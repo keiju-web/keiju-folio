@@ -8,6 +8,7 @@ import CenterContainer from 'components/container/CenterContainer'
 import TextLines from 'components/text/TextLines'
 import { useSuspenseQuery } from 'utils/react-query'
 
+import Badges from './components/Badges'
 import SkillValues from './components/SkillValues'
 
 const Resume: FC = () => {
@@ -17,6 +18,7 @@ const Resume: FC = () => {
     <CenterContainer>
       <Grid container spacing={4}>
         <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
+          <Badges />
           {data.map((d, i) => {
             return (
               <Grow key={i} in timeout={(i + 1) * 500}>
