@@ -10,6 +10,7 @@
 - useContext modal & toast
 - RHF - MUI
 - Responsive
+- PWA Settings
 - Splash & Favicon
 - Deploy by Vercel
 
@@ -17,7 +18,7 @@
 
 - Mock Service Worker
 - Rich UI
-- Fix bugs on iOS
+- React Markdown
 
 ## Set up supabase
 
