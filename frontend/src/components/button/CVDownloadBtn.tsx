@@ -59,7 +59,9 @@ const ModalContents: FC = () => {
           <Button onClick={onClickEN}>ENGLISH ver</Button>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Button onClick={onClickJP}>JAPANESE ver</Button>
+          <Button onClick={onClickJP} disabled>
+            JAPANESE ver
+          </Button>
         </Grid>
       </Grid>
     </Container>

@@ -19,7 +19,7 @@ const Button: FC<Props> = ({
   return (
     <MuiButton
       {...otherProps}
-      disabled={isLoading}
+      disabled={isLoading || otherProps.disabled}
       color={isLoading ? 'inherit' : 'primary'}
       size={size}
       variant={mode === 'primary' ? 'contained' : 'outlined'}

@@ -23,7 +23,6 @@ const Home: FC = () => {
     <CenterContainer
       sx={{
         height: 'calc(100vh - 100px)',
-        my: { xs: -8, md: -4 },
         px: '0px !important',
       }}
     >
