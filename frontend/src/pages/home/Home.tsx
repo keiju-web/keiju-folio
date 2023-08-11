@@ -24,6 +24,7 @@ const Home: FC = () => {
       sx={{
         height: 'calc(100vh - 100px)',
         px: '0px !important',
+        maxWidth: '100% !important',
       }}
     >
       <PulseStar />
