@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 
 /**
  * Address issue of scroll position remaining at SPA transition
+ * FYI. https://v5.reactrouter.com/web/guides/scroll-restoration
+ * FYI. https://stackoverflow.com/questions/69240281/react-scroll-to-top-not-working-new-solutions-needed
  */
 
 export const SCROLL_TO_TOP_ID = 'main-container'
