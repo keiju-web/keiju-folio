@@ -10,6 +10,7 @@ import Loading from 'components/loading/Loading'
 import Modal from 'components/modal/Modal'
 import Sidebar from 'components/sidebar/Sidebar'
 import Toast from 'components/toast/Toast'
+import { SCROLL_TO_TOP_ID } from 'components/util/ScrollToTop'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
 import { ErrorBoundary } from 'react-error-boundary'
@@ -60,6 +61,7 @@ const Layout: FC<Props> = ({ children }) => {
         </Box>
 
         <Box
+          id={SCROLL_TO_TOP_ID}
           sx={{
             display: 'flex',
             flexDirection: 'column',

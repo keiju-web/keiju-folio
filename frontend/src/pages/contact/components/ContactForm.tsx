@@ -71,10 +71,8 @@ const ContactForm: FC = () => {
   /** Send message */
   const onSubmit: SubmitHandler<ContactFormType> = useCallback(
     (data) => {
-      const reqData: InsertContact = {
-        ...data,
-      }
-      mutation.mutate([reqData])
+      const reqData: InsertContact[] = [data]
+      mutation.mutate(reqData)
     },
     [mutation],
   )
