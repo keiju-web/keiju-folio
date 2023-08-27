@@ -2,6 +2,7 @@ import 'index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import { ENVIRONMENT } from 'constants/env'
 import { muiTheme, queryClient } from 'constants/global-settings'
 
 import { ThemeProvider } from '@mui/material/styles'
@@ -14,6 +15,12 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+if (ENVIRONMENT === 'local') {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
 
 root.render(
   <React.StrictMode>

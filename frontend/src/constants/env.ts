@@ -1,3 +1,5 @@
+export const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT as 'local' | 'dev'
+
 /** Supabse settings */
 export const SUPABASE_PROJECT_URL = process.env.REACT_APP_SUPABSE_URL as string
 export const SUPABASE_API_KEY = process.env.REACT_APP_SUPABSE_API_KEY as string

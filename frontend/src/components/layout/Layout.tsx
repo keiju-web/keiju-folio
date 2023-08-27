@@ -38,7 +38,7 @@ const Layout: FC<Props> = ({ children }) => {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>{currentRoute?.name ?? 'Folio'}</title>
+          <title>{currentRoute?.name ?? 'Folio'} | keiju-folio</title>
         </Helmet>
       </HelmetProvider>
 
