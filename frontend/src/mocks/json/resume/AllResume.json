@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "created_at": "2023-08-09T05:21:37+00:00",
+    "title": "Summary",
+    "content": "- 4 years of experience in open/web systems development.\\n\n- 2 years of experience in React and AWS. \\n\n- Fluent in both Japanese and English (TOEIC score: 835)"
+  },
+  {
+    "id": 2,
+    "created_at": "2023-08-07T14:06:49+00:00",
+    "title": "Qualifications",
+    "content": "- AWS Certified Developer Associate\\n\n- AWS Certified DevOps Engineer Professional"
+  },
+  {
+    "id": 3,
+    "created_at": "2023-08-12T03:13:44+00:00",
+    "title": "Technical Skills",
+    "content": "Languages:             TypeScript, JavaScript, Python, Java, C#, PHP\\n\nFramework/Libraries:     React.js, Next.js, Node.js, FastAPI, Jest\\n\nDatabase:               My SQL, PostgreSQL, DynamoDB\\n\nTools:                  AWS, Git, Figma etc.\\n"
+  },
+  {
+    "id": 4,
+    "created_at": "2023-08-07T14:08:12+00:00",
+    "title": "Work Experience",
+    "content": "NID (in Tokyo, Japan) April 2020 – March 2022\\n\n- Developed a CPAP management system.\\n\n- Developed a toll gate management system.\\n\n\\n\nKokorozashi (in Tokyo, Japan) April 2022 – Present\\n\n- Designed and developed an inquiry management system for a mobile carry.\\n\n- Designed and developed interoffice portal site.\\n\n- Designed and developed a release management system for a music company.\\n\n- Designed and developed an experiment management system for a chemical manufacturer."
+  },
+  {
+    "id": 5,
+    "created_at": "2023-08-07T14:08:53+00:00",
+    "title": "Education",
+    "content": "Toyo University (Tokyo, Japan) – 2016-2020\\n\nBachelor of Economics"
+  }
+]

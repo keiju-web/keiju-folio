@@ -9,6 +9,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import { AuthProvider } from 'hooks/use-auth'
 import { ModalProvider } from 'hooks/use-modal'
 import { ToastProvider } from 'hooks/use-toast'
+import { SetupWorker } from 'msw'
 import { QueryClientProvider } from 'react-query'
 
 import App from './App'
@@ -18,8 +19,11 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 if (ENVIRONMENT === 'local') {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { worker } = require('./mocks/browser')
-  worker.start()
+  const { worker }: { worker: SetupWorker } = require('./mocks/browser')
+  worker.start({
+    // Turn off the warnings
+    onUnhandledRequest: 'bypass',
+  })
 }
 
 root.render(

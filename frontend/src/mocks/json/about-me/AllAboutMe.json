@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "created_at": "2023-08-04T17:37:37.277182+00:00",
+    "content": "I love traveling abroad, listening to music and watching movies. I am 25 years old. I am always exploring new web technologies."
+  },
+  {
+    "id": 2,
+    "created_at": "2023-08-04T17:38:42.097563+00:00",
+    "content": "I am currently looking for jobs as a Web Developer in Vancouver.\\nI worked on React.js, Typescript, AWS and so on in Japan.\\nThough my main area of expertise is front-end development, I can also build a little infrastructure using AWS!"
+  }
+]
