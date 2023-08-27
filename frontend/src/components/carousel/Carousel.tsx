@@ -9,7 +9,7 @@ type Props = Partial<CarouselProps> & {
   slides: ReactNode[]
 }
 
-// TODO: Not working
+// FIXME: Not working
 const CarouselWrapper = styled('div')`
   overflow-x: hidden;
 `
