@@ -1,6 +1,8 @@
-import { FC, memo } from 'react'
+import { Typography } from '@mui/material'
+import { memo } from 'react'
 
-import { Typography, TypographyProps } from '@mui/material'
+import type { TypographyProps } from '@mui/material'
+import type { FC } from 'react'
 
 type Props = {
   text: string

@@ -1,8 +1,11 @@
-import { FC, forwardRef, memo } from 'react'
-
-import { Alert, AlertColor } from '@mui/material'
-import Slide, { SlideProps } from '@mui/material/Slide'
+import { Alert } from '@mui/material'
+import Slide from '@mui/material/Slide'
 import Snackbar from '@mui/material/Snackbar'
+import { forwardRef, memo } from 'react'
+
+import type { AlertColor } from '@mui/material'
+import type { SlideProps } from '@mui/material/Slide'
+import type { FC } from 'react'
 
 export type ToastProps = {
   isOpen: boolean

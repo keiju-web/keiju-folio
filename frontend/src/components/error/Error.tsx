@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { Typography, Container, Box } from '@mui/material'
+import { Button } from 'components'
 import { useNavigate } from 'react-router-dom'
 
-import { Typography, Container, Box } from '@mui/material'
-import Button from 'components/button/Button'
+import type { FC } from 'react'
 
 const Error: FC = () => {
   const navigate = useNavigate()

@@ -1,9 +1,9 @@
-import { FC } from 'react'
-
 import { Box, Grow } from '@mui/material'
 import { getAllAboutMe } from 'api/about-me'
-import TextLines from 'components/text/TextLines'
+import { TextLines } from 'components'
 import { useSuspenseQuery } from 'utils/react-query'
+
+import type { FC } from 'react'
 
 const Detail: FC = () => {
   const { data } = useSuspenseQuery('getAllAboutMe', getAllAboutMe)

@@ -1,10 +1,12 @@
-import { FC } from 'react'
-
-import Checkbox, { CheckboxProps } from '@mui/material/Checkbox'
+import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormGroup from '@mui/material/FormGroup'
 
-import { FieldWrapper, FieldWrapperPassThroughProps } from '../FieldWrapper'
+import { FieldWrapper } from '../FieldWrapper'
+
+import type { FieldWrapperPassThroughProps } from '../FieldWrapper'
+import type { CheckboxProps } from '@mui/material/Checkbox'
+import type { FC } from 'react'
 
 export type CheckboxGroupProps = {
   fieldWrapper: FieldWrapperPassThroughProps

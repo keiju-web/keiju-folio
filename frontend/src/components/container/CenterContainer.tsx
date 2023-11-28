@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { Container } from '@mui/material'
 
-import { Container, ContainerProps } from '@mui/material'
+import type { ContainerProps } from '@mui/material'
+import type { FC } from 'react'
 
 type Props = ContainerProps
 

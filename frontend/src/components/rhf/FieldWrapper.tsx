@@ -1,8 +1,8 @@
-import { FC, PropsWithChildren } from 'react'
-
 import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import Typography from '@mui/material/Typography'
+
+import type { FC, PropsWithChildren } from 'react'
 
 type FieldWrapperProps = PropsWithChildren<{
   label?: string

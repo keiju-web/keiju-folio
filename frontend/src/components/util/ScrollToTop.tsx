@@ -1,5 +1,7 @@
-import { FC, useLayoutEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+
+import type { FC } from 'react'
 
 /**
  * Address issue of scroll position remaining at SPA transition

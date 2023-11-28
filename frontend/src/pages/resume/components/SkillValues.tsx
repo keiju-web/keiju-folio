@@ -1,9 +1,11 @@
-import { FC, useCallback } from 'react'
-
-import { Box, Grow, LinearProgressProps, Typography } from '@mui/material'
+import { Box, Grow, Typography } from '@mui/material'
 import { getAllSkillValues } from 'api/skill-value'
-import LinearProgressWithLabel from 'components/progress/LinearProgressWithLabel'
+import { LinearProgressWithLabel } from 'components'
+import { useCallback } from 'react'
 import { useSuspenseQuery } from 'utils/react-query'
+
+import type { LinearProgressProps } from '@mui/material'
+import type { FC } from 'react'
 
 const SkillValues: FC = () => {
   const { data } = useSuspenseQuery('getAllSkillValues', getAllSkillValues)

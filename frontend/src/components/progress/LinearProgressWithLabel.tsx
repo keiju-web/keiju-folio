@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { Box, LinearProgress, Typography } from '@mui/material'
 
-import { Box, LinearProgress, LinearProgressProps, Typography } from '@mui/material'
+import type { LinearProgressProps } from '@mui/material'
+import type { FC } from 'react'
 
 type Props = LinearProgressProps & { value: number }
 

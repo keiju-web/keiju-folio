@@ -3,8 +3,17 @@
 import { MESSAGE } from 'constants/message'
 
 import { useToast } from 'hooks/use-toast'
-import { useQuery, QueryFunction, QueryKey, UseQueryResult, UseQueryOptions } from 'react-query'
-import { useMutation, MutationFunction, UseMutationOptions, UseMutationResult } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
+
+import type {
+  MutationFunction,
+  UseMutationOptions,
+  UseMutationResult,
+  QueryFunction,
+  QueryKey,
+  UseQueryResult,
+  UseQueryOptions,
+} from 'react-query'
 
 type RequireData<T extends { data: unknown }> = T & {
   data: NonNullable<T['data']>

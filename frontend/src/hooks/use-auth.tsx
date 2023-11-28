@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-extra-semi */
-import { FC, useState, useEffect, createContext, ReactNode, useCallback, useContext } from 'react'
-
 import { supabase } from 'constants/global-settings'
 
-import { Session } from '@supabase/supabase-js'
+import { useState, useEffect, createContext, useCallback, useContext } from 'react'
+
+import type { Session } from '@supabase/supabase-js'
+import type { FC, ReactNode } from 'react'
 
 /**
  * Auth Context

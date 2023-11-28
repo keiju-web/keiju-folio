@@ -1,5 +1,3 @@
-import { FC, ReactNode, memo, useMemo } from 'react'
-
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Modal as MuiModal,
@@ -11,6 +9,9 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import { memo, useMemo } from 'react'
+
+import type { FC, ReactNode } from 'react'
 
 export type ModalProps = {
   isOpen: boolean

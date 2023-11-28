@@ -1,12 +1,11 @@
-import { FC } from 'react'
-
 import { CONTACT_US_IMG_SRC } from 'constants/env'
 
 import { Grid, Hidden } from '@mui/material'
-import CenterContainer from 'components/container/CenterContainer'
-import Image from 'components/image/Image'
+import { Image, CenterContainer } from 'components'
 
 import ContactForm from './components/ContactForm'
+
+import type { FC } from 'react'
 
 const Contact: FC = () => {
   return (

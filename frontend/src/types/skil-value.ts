@@ -1,6 +1,5 @@
-import { Database } from 'lib/schema'
-
-import { SnakeToCamel } from './util'
+import type { SnakeToCamel } from './util'
+import type { Database } from 'lib/schema'
 
 export type SkillValue = SnakeToCamel<Database['public']['Tables']['skill_value']['Row']>
 

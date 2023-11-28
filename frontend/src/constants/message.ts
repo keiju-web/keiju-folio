@@ -3,4 +3,4 @@ export const MESSAGE = {
   NOT_READY_PAGE: "Sorry, this page hasn't been ready yet",
   SUCCESSFUL: 'Successful!',
   FAILED: 'Sorry, something went wrong',
-}
+} as const

@@ -1,8 +1,11 @@
 import MenuItem from '@mui/material/MenuItem'
-import TextField, { TextFieldProps } from '@mui/material/TextField'
+import TextField from '@mui/material/TextField'
 
-import { FieldWrapper, FieldWrapperPassThroughProps } from '../FieldWrapper'
-import { Options } from '../types'
+import { FieldWrapper } from '../FieldWrapper'
+
+import type { FieldWrapperPassThroughProps } from '../FieldWrapper'
+import type { Options } from '../types'
+import type { TextFieldProps } from '@mui/material/TextField'
 
 export type SelectProps<T extends number | string = number> = {
   fieldWrapper: FieldWrapperPassThroughProps

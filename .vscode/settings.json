@@ -6,8 +6,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  // prettier
-  "prettier.printWidth": 100,
   // Others
   "editor.tabSize": 2,
   "git.ignoreLimitWarning": true

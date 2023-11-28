@@ -1,15 +1,12 @@
-import { FC } from 'react'
-
 import { Box, Grid, Grow } from '@mui/material'
 import { getAllResume } from 'api/resume'
-import Accordion from 'components/accordion/Accordion'
-import CVDownloadBtn from 'components/button/CVDownloadBtn'
-import CenterContainer from 'components/container/CenterContainer'
-import TextLines from 'components/text/TextLines'
+import { Accordion, CVDownloadBtn, CenterContainer, TextLines } from 'components'
 import { useSuspenseQuery } from 'utils/react-query'
 
 import Badges from './components/Badges'
 import SkillValues from './components/SkillValues'
+
+import type { FC } from 'react'
 
 const Resume: FC = () => {
   const { data } = useSuspenseQuery('getAllResume', getAllResume)

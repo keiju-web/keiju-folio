@@ -1,7 +1,9 @@
-import { FC, memo } from 'react'
-
 import { CircularProgress, Box } from '@mui/material'
-import { ButtonProps, Button as MuiButton } from '@mui/material'
+import { Button as MuiButton } from '@mui/material'
+import { memo } from 'react'
+
+import type { ButtonProps } from '@mui/material'
+import type { FC } from 'react'
 
 type Props = ButtonProps & {
   mode?: 'primary' | 'secondary'

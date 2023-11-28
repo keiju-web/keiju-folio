@@ -1,5 +1,3 @@
-import { FC, useCallback } from 'react'
-
 import { MESSAGE } from 'constants/message'
 
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
@@ -7,13 +5,15 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
 import EmailIcon from '@mui/icons-material/Email'
 import { Box, InputAdornment, Paper, Fade, Typography } from '@mui/material'
 import { addContacts } from 'api/contact'
-import Button from 'components/button/Button'
-import { RULES } from 'components/rhf/constant'
-import { TextFieldController } from 'components/rhf/controllers/TextFieldController'
+import { Button, RULES, TextFieldController } from 'components'
 import { useToast } from 'hooks/use-toast'
-import { RegisterOptions, SubmitHandler, useForm } from 'react-hook-form'
-import { InsertContact } from 'types/contact'
+import { useCallback } from 'react'
+import { useForm } from 'react-hook-form'
 import { useCommonMutation } from 'utils/react-query'
+
+import type { FC } from 'react'
+import type { RegisterOptions, SubmitHandler } from 'react-hook-form'
+import type { InsertContact } from 'types/contact'
 
 type ContactFormType = {
   name: string

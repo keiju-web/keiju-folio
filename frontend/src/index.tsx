@@ -1,6 +1,4 @@
 import 'index.css'
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 
 import { ENVIRONMENT } from 'constants/env'
 import { muiTheme, queryClient } from 'constants/global-settings'
@@ -9,11 +7,14 @@ import { ThemeProvider } from '@mui/material/styles'
 import { AuthProvider } from 'hooks/use-auth'
 import { ModalProvider } from 'hooks/use-modal'
 import { ToastProvider } from 'hooks/use-toast'
-import { SetupWorker } from 'msw'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import { QueryClientProvider } from 'react-query'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
+import type { SetupWorker } from 'msw'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 

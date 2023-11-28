@@ -1,6 +1,7 @@
-import { FC, memo, useMemo } from 'react'
-
 import { Box, Container, Typography } from '@mui/material'
+import { memo, useMemo } from 'react'
+
+import type { FC } from 'react'
 
 /** Sticky Footer */
 const Footer: FC = () => {

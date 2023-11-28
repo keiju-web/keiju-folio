@@ -1,9 +1,11 @@
-import { memo, FC, useCallback } from 'react'
-
 import { REPOSITORY_URL } from 'constants/env'
 
 import GitHubIcon from '@mui/icons-material/GitHub'
-import IconButton, { IconButtonProps } from '@mui/material/IconButton'
+import IconButton from '@mui/material/IconButton'
+import { memo, useCallback } from 'react'
+
+import type { IconButtonProps } from '@mui/material/IconButton'
+import type { FC } from 'react'
 
 type Props = IconButtonProps
 

@@ -1,7 +1,9 @@
-import { FC, ReactNode, memo } from 'react'
-
 import { Box, styled } from '@mui/material'
-import { CarouselProps, Carousel as ReactCarousel } from 'react-responsive-carousel'
+import { memo } from 'react'
+import { Carousel as ReactCarousel } from 'react-responsive-carousel'
+
+import type { FC, ReactNode } from 'react'
+import type { CarouselProps } from 'react-responsive-carousel'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 

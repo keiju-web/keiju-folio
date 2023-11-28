@@ -1,13 +1,12 @@
-import { FC } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import { ROUTES } from 'constants/route'
 
 import { CssBaseline } from '@mui/material'
 // import Auth from 'components/auth/Auth'
-import Layout from 'components/layout/Layout'
-import ScrollTop from 'components/util/ScrollToTop'
+import { Layout, ScrollToTop } from 'components'
 import { useAuth } from 'hooks/use-auth'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import type { FC } from 'react'
 
 const App: FC = () => {
   const { session, isAuthorizing } = useAuth()
@@ -23,7 +22,7 @@ const App: FC = () => {
 
       {/* {session ? ( */}
       <BrowserRouter>
-        <ScrollTop />
+        <ScrollToTop />
         <Layout>
           <Routes>
             {ROUTES.map((route, key) => {

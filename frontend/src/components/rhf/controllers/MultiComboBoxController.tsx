@@ -1,7 +1,10 @@
-import { FieldPathByValue, FieldValues, useController, UseControllerProps } from 'react-hook-form'
+import { useController } from 'react-hook-form'
 
-import { Options } from '../types'
-import { MultiComboBox, MultiComboBoxProps } from '../views/MultiComboBox'
+import { MultiComboBox } from '../views/MultiComboBox'
+
+import type { Options } from '../types'
+import type { MultiComboBoxProps } from '../views/MultiComboBox'
+import type { FieldPathByValue, FieldValues, UseControllerProps } from 'react-hook-form'
 
 type MultiComboBoxControllerProps<
   TFieldValues extends FieldValues,

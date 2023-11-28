@@ -1,7 +1,8 @@
-import { FC, ReactNode, createContext, useCallback, useContext, useState } from 'react'
+import { createContext, useCallback, useContext, useState } from 'react'
 
-import { AlertColor } from '@mui/material'
-import { ToastProps } from 'components/toast/Toast'
+import type { AlertColor } from '@mui/material'
+import type { ToastProps } from 'components'
+import type { FC, ReactNode } from 'react'
 
 /**
  * Toast Context

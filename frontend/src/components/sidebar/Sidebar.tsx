@@ -1,6 +1,3 @@
-import { FC, memo, useCallback, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-
 import { PROFILE_IMG_SRC } from 'constants/env'
 import { MESSAGE } from 'constants/message'
 import { ROUTES } from 'constants/route'
@@ -20,10 +17,13 @@ import {
   useTheme,
 } from '@mui/material'
 import { styled } from '@mui/system'
-import GitHubBtn from 'components/button/GitHubBtn'
-import Image from 'components/image/Image'
+import { GitHubBtn, Image } from 'components'
 import { useToast } from 'hooks/use-toast'
+import { memo, useCallback, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { fadeIn, slideInFromLeft, slideInFromRight } from 'styles/keyframes'
+
+import type { FC } from 'react'
 
 const Sidebar: FC = () => {
   const theme = useTheme()

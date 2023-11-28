@@ -1,13 +1,15 @@
-import { FC, memo, useCallback } from 'react'
-
 import { CV_EN, CV_JP } from 'constants/env'
 
 import DownloadIcon from '@mui/icons-material/Download'
-import { ButtonProps, Container, Grid } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import { useModal } from 'hooks/use-modal'
+import { memo, useCallback } from 'react'
 import { handleDownload } from 'utils/util'
 
 import Button from './Button'
+
+import type { ButtonProps } from '@mui/material'
+import type { FC } from 'react'
 
 type Props = ButtonProps
 

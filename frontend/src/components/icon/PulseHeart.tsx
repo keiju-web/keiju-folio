@@ -1,9 +1,9 @@
-import { FC } from 'react'
-
 import FavoriteIcon from '@mui/icons-material/Favorite'
-import { IconProps } from '@mui/material'
 import { styled } from '@mui/system'
 import { pulse } from 'styles/keyframes'
+
+import type { IconProps } from '@mui/material'
+import type { FC } from 'react'
 
 const HeartIcon = styled(FavoriteIcon)({
   animation: `${pulse} 1s infinite`,

@@ -1,6 +1,9 @@
-import { FieldPathByValue, FieldValues, useController, UseControllerProps } from 'react-hook-form'
+import { useController } from 'react-hook-form'
 
-import { Select, SelectProps } from '../views/Select'
+import { Select } from '../views/Select'
+
+import type { SelectProps } from '../views/Select'
+import type { FieldPathByValue, FieldValues, UseControllerProps } from 'react-hook-form'
 
 type SelectControllerProps<
   TFieldValues extends FieldValues,

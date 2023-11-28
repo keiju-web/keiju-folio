@@ -1,8 +1,12 @@
-import Autocomplete, { AutocompleteProps } from '@mui/material/Autocomplete'
-import TextField, { TextFieldProps } from '@mui/material/TextField'
+import Autocomplete from '@mui/material/Autocomplete'
+import TextField from '@mui/material/TextField'
 
-import { FieldWrapper, FieldWrapperPassThroughProps } from '../FieldWrapper'
-import { Option, Options } from '../types'
+import { FieldWrapper } from '../FieldWrapper'
+
+import type { FieldWrapperPassThroughProps } from '../FieldWrapper'
+import type { Option, Options } from '../types'
+import type { AutocompleteProps } from '@mui/material/Autocomplete'
+import type { TextFieldProps } from '@mui/material/TextField'
 
 export type MultiComboBoxProps<T extends number | string> = {
   fieldWrapper: FieldWrapperPassThroughProps

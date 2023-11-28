@@ -1,7 +1,10 @@
-import { FieldPathByValue, FieldValues, useController, UseControllerProps } from 'react-hook-form'
+import { useController } from 'react-hook-form'
 
-import { Options } from '../types'
-import { CheckboxGroup, CheckboxGroupProps } from '../views/CheckBoxGroup'
+import { CheckboxGroup } from '../views/CheckBoxGroup'
+
+import type { Options } from '../types'
+import type { CheckboxGroupProps } from '../views/CheckBoxGroup'
+import type { FieldPathByValue, FieldValues, UseControllerProps } from 'react-hook-form'
 
 type CheckboxGroupControllerProps<
   TFieldValues extends FieldValues,

@@ -1,13 +1,12 @@
-import { FC } from 'react'
-
 import { ABOUT_ME_IMG_SRC } from 'constants/env'
 
 import { Typography, Box, Grow } from '@mui/material'
 import { styled } from '@mui/system'
-import CenterContainer from 'components/container/CenterContainer'
-import Image from 'components/image/Image'
+import { CenterContainer, Image } from 'components'
 
 import Detail from './components/Detail'
+
+import type { FC } from 'react'
 
 const Highlight = styled('span')({
   color: '#ff8c00',

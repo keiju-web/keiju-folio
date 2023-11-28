@@ -1,10 +1,10 @@
-import { FC } from 'react'
-
 import { supabase } from 'constants/global-settings'
 
 import { Box } from '@mui/material'
 import { Auth as SupabaseAuth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
+
+import type { FC } from 'react'
 
 const Auth: FC = () => {
   return (

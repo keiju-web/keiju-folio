@@ -1,6 +1,6 @@
-import { CSSProperties, FC } from 'react'
-
 import { PACMAN_IMG_SRC } from 'constants/env'
+
+import type { CSSProperties, FC } from 'react'
 
 type Props = {
   height?: string | number

@@ -1,8 +1,10 @@
-import { Theme, createTheme, responsiveFontSizes } from '@mui/material/styles'
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 import { createClient } from '@supabase/supabase-js'
 import { QueryClient } from 'react-query'
 
 import { SUPABASE_API_KEY, SUPABASE_PROJECT_URL } from './env'
+
+import type { Theme } from '@mui/material/styles'
 
 /** Supabase client */
 export const supabase = createClient(SUPABASE_PROJECT_URL, SUPABASE_API_KEY)

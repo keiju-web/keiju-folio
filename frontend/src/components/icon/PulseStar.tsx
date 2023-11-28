@@ -1,9 +1,9 @@
-import { FC } from 'react'
-
 import StarIcon from '@mui/icons-material/Star'
-import { IconProps } from '@mui/material'
 import { styled } from '@mui/system'
 import { pulse } from 'styles/keyframes'
+
+import type { IconProps } from '@mui/material'
+import type { FC } from 'react'
 
 const PulsingIcon = styled(StarIcon)(({ theme }) => ({
   animation: `${pulse} 2s linear infinite`,

@@ -1,8 +1,8 @@
-import { FC } from 'react'
-
 import { LOADING_IMG_SRC } from 'constants/env'
 
 import { Box } from '@mui/material'
+
+import type { FC } from 'react'
 
 type Props = {
   height?: string | number

@@ -1,6 +1,8 @@
-import { FC, memo } from 'react'
+import { Box, Card, CardMedia } from '@mui/material'
+import { memo } from 'react'
 
-import { Box, Card, CardMedia, CardMediaProps } from '@mui/material'
+import type { CardMediaProps } from '@mui/material'
+import type { FC } from 'react'
 
 export type ImageProps = CardMediaProps & {
   alt: string

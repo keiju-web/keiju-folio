@@ -1,8 +1,10 @@
-import { FC, memo } from 'react'
-
 import { DOP_IMG_SRC } from 'constants/env'
 
-import Image, { ImageProps } from 'components/image/Image'
+import { Image } from 'components'
+import { memo } from 'react'
+
+import type { ImageProps } from 'components'
+import type { FC } from 'react'
 
 type Props = Omit<ImageProps, 'alt' | 'src'>
 

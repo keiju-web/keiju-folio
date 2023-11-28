@@ -1,13 +1,14 @@
-import { PathRouteProps } from 'react-router-dom'
-
-import { BoxProps } from '@mui/material'
+import { Error } from 'components'
+// eslint-disable-next-line no-restricted-imports
 import Components from 'components/Components'
-import Error from 'components/error/Error'
 import AboutMe from 'pages/about-me/AboutMe'
 import Contact from 'pages/contact/Contact'
 import Home from 'pages/home/Home'
 import Projects from 'pages/projects/Projects'
 import Resume from 'pages/resume/Resume'
+
+import type { BoxProps } from '@mui/material'
+import type { PathRouteProps } from 'react-router-dom'
 
 type RouteName = 'Home' | 'About Me' | 'Resume' | 'Projects' | 'Contact'
 

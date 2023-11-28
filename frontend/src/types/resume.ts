@@ -1,6 +1,5 @@
-import { Database } from 'lib/schema'
-
-import { SnakeToCamel } from './util'
+import type { SnakeToCamel } from './util'
+import type { Database } from 'lib/schema'
 
 export type Resume = SnakeToCamel<Database['public']['Tables']['resume']['Row']>
 

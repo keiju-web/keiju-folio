@@ -1,6 +1,7 @@
-import { FieldPathByValue, FieldValues, UseFormRegisterReturn } from 'react-hook-form'
+import { TextField } from '../views/TextField'
 
-import { TextField, TextFieldProps } from '../views/TextField'
+import type { TextFieldProps } from '../views/TextField'
+import type { FieldPathByValue, FieldValues, UseFormRegisterReturn } from 'react-hook-form'
 
 type TextFieldControllerProps<TFieldValues extends FieldValues> = {
   registration: UseFormRegisterReturn<FieldPathByValue<TFieldValues, string>>

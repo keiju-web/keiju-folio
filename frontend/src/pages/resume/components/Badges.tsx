@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { Box } from '@mui/material'
+import { DOP, DVA } from 'components'
 
-import { Theme } from '@emotion/react'
-import { Box, SxProps } from '@mui/material'
-import DOP from 'components/icon/DOP'
-import DVA from 'components/icon/DVA'
+import type { Theme } from '@emotion/react'
+import type { SxProps } from '@mui/material'
+import type { FC } from 'react'
 
 const sx: SxProps<Theme> = {
   width: { sm: '100px', md: '150px' },

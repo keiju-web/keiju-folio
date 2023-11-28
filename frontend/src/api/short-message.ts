@@ -1,6 +1,6 @@
 import { supabase } from 'constants/global-settings'
 
-import { ShortMessage } from 'types/short-message'
+import type { ShortMessage } from 'types/short-message'
 
 const TABLE_NAME = 'short_message'
 

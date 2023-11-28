@@ -1,7 +1,9 @@
-import { FC } from 'react'
+import MuiTextField from '@mui/material/TextField'
+import { FieldWrapper } from 'components'
 
-import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField'
-import { FieldWrapper, FieldWrapperPassThroughProps } from 'components/rhf/FieldWrapper'
+import type { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField'
+import type { FieldWrapperPassThroughProps } from 'components'
+import type { FC } from 'react'
 
 export type TextFieldProps = {
   fieldWrapper: FieldWrapperPassThroughProps

@@ -1,16 +1,14 @@
-import { FC, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import { ROUTE_PATH } from 'constants/route'
 
 import { Box, Typography } from '@mui/material'
-import Button from 'components/button/Button'
-import CVDownloadBtn from 'components/button/CVDownloadBtn'
-import CenterContainer from 'components/container/CenterContainer'
-import PulseStar from 'components/icon/PulseStar'
+import { Button, CVDownloadBtn, CenterContainer, PulseStar } from 'components'
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { fadeInWithTranslate } from 'styles/keyframes'
 
 import Slides from './components/Slides'
+
+import type { FC } from 'react'
 
 const Home: FC = () => {
   const navigate = useNavigate()

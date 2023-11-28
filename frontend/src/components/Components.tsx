@@ -1,12 +1,10 @@
-import { FC, ReactNode, useCallback, useState } from 'react'
-
 import { Box, Container, Grid, Paper, Typography } from '@mui/material'
-import Button from 'components/button/Button'
-import Loading from 'components/loading/Loading'
+import { Button, Loading } from 'components'
 import { useAuth } from 'hooks/use-auth'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useCallback, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 import Accordion from './accordion/Accordion'
 import Carousel from './carousel/Carousel'
@@ -17,7 +15,10 @@ import { CheckboxGroupController } from './rhf/controllers/CheckBoxGroupControll
 import { MultiComboBoxController } from './rhf/controllers/MultiComboBoxController'
 import { SelectController } from './rhf/controllers/SelectController'
 import { TextFieldController } from './rhf/controllers/TextFieldController'
-import { Options } from './rhf/types'
+
+import type { Options } from './rhf/types'
+import type { FC, ReactNode } from 'react'
+import type { SubmitHandler } from 'react-hook-form'
 
 /**
  * This is a page for confirmation of all common components on this app

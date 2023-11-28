@@ -1,20 +1,15 @@
-import { FC, ReactNode, Suspense, useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
-
 import { ROUTES } from 'constants/route'
 
 import { Box } from '@mui/material'
-import Error from 'components/error/Error'
-import Footer from 'components/footer/Footer'
-import Loading from 'components/loading/Loading'
-import Modal from 'components/modal/Modal'
-import Sidebar from 'components/sidebar/Sidebar'
-import Toast from 'components/toast/Toast'
-import { SCROLL_TO_TOP_ID } from 'components/util/ScrollToTop'
+import { Error, Footer, Loading, Modal, Sidebar, Toast, SCROLL_TO_TOP_ID } from 'components'
 import { useModal } from 'hooks/use-modal'
 import { useToast } from 'hooks/use-toast'
+import { Suspense, useMemo } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { HelmetProvider, Helmet } from 'react-helmet-async'
+import { useLocation } from 'react-router-dom'
+
+import type { FC, ReactNode } from 'react'
 
 type Props = {
   children: ReactNode
