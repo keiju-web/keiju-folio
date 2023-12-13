@@ -13,7 +13,7 @@ import { useCommonMutation } from 'utils/react-query'
 
 import type { FC } from 'react'
 import type { RegisterOptions, SubmitHandler } from 'react-hook-form'
-import type { InsertContact } from 'types/contact'
+import type { InsertContact } from 'types/api/contact'
 
 type ContactFormType = {
   name: string

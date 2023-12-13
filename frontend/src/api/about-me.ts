@@ -1,6 +1,6 @@
 import { supabase } from 'constants/global-settings'
 
-import type { AboutMe } from 'types/about-me'
+import type { AboutMe } from 'types/api/about-me'
 
 const TABLE_NAME = 'about_me'
 

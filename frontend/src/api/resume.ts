@@ -1,6 +1,6 @@
 import { supabase } from 'constants/global-settings'
 
-import type { Resume } from 'types/resume'
+import type { Resume } from 'types/api/resume'
 
 const TABLE_NAME = 'resume'
 

@@ -13,12 +13,7 @@
 - PWA Settings
 - Splash & Favicon
 - Deploy by Vercel
-
-# TODO (NOT DONE)
-
 - Mock Service Worker
-- Rich UI
-- React Markdown
 
 ## Set up supabase
 

@@ -1,6 +1,6 @@
 import { supabase } from 'constants/global-settings'
 
-import type { SkillValue } from 'types/skil-value'
+import type { SkillValue } from 'types/api/skil-value'
 
 const TABLE_NAME = 'skill_value'
 

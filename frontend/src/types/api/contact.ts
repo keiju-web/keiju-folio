@@ -1,4 +1,4 @@
-import type { SnakeToCamel } from './util'
+import type { SnakeToCamel } from '../util'
 import type { Database } from 'lib/schema'
 
 export type Contact = SnakeToCamel<Database['public']['Tables']['contact']['Row']>

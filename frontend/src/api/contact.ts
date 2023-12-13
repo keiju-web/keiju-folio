@@ -1,6 +1,6 @@
 import { supabase } from 'constants/global-settings'
 
-import type { Contact, InsertContact } from 'types/contact'
+import type { Contact, InsertContact } from 'types/api/contact'
 
 const TABLE_NAME = 'contact'
 
